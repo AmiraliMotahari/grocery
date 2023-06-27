@@ -1,0 +1,69 @@
+section.signup {
+  width: 100%;
+  padding: 50px 20px;
+}
+section.signup > .container {
+  display: flex;
+  width: 30%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 10px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  row-gap: 20px;
+}
+section.signup > .container > form{
+  display: flex;
+  width: 75%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+section.signup > .container > form > p{
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: start;
+}
+section.signup > .container > form > p> input,section.signup > .container > form > p> label{
+  width: 100%;
+}
+section.signup > .container > form > p> input{
+  all: unset;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+section.signup > .container > form>p>input:focus:valid{
+  border-color: #14A44D !important;
+}
+section.signup > .container > form>p>input:focus:invalid{
+  border-color: red !important;
+}
+
+section.signup > .container > form span.helptext, section.signup > .container > form ul>li{
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5px;
+  color: #3b3b3b;
+}
+section.signup > .container > form ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+section.signup > .container > form ul.errorlist:last-of-type>li{
+  font-size: 16px;
+  font-weight: 700;
+  color: red;
+  margin-bottom: 10px;
+}
+section.signup > .container > form:has(ul.errorlist:nth-of-type(2))>p>input{
+  border-color: red !important;
+}
+section.signup > .container > form:has(ul.errorlist:nth-of-type(2))>button{
+  background-color: red !important;
+}

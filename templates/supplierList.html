@@ -1,0 +1,34 @@
+{% extends 'adminBase.html' %} 
+
+{% load static %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/supplier.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="supplierList">
+  <div class="wrapper">
+    <div class="top">
+      <h4>All Avaliable suppliers</h4>
+      <a class="btn btn-black px-3" role="button" href="{% url  'supplierCreate' %}">Add more</a>
+    </div>
+    <div class="container">
+      {% for supplier in object_list%}
+      <div class="supplierCard">
+        <h4>{{ supplier.name }}</h4>
+        <p>{{ supplier.phoneNum }}</p>
+        <p>{{ supplier.email }}</p>
+        <p>{{ supplier.address }}</p>
+        <div class="btns">
+          <a class="btn btn-info px-3" role="button" href="{% url 'supplierUpdate' supplier.pk %}">edit</a>
+          <a class="btn btn-danger px-3" role="button" href="{% url 'supplierDelete' supplier.pk %}">delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

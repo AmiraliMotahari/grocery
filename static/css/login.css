@@ -1,0 +1,62 @@
+section.login {
+  width: 100%;
+  padding: 50px 20px;
+}
+section.login > .container {
+  display: flex;
+  width: 30%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 10px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  row-gap: 20px;
+}
+section.login > .container > form{
+  display: flex;
+  width: 75%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+section.login > .container > form > p{
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: start;
+}
+section.login > .container > form > p> input,section.login > .container > form > p> label{
+  width: 100%;
+}
+section.login > .container > form > p> input{
+  all: unset;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+section.login > .container > form>p>input:focus:valid{
+  border-color: #14A44D !important;
+}
+section.login > .container > form>p>input:focus:invalid{
+  border-color: red !important;
+}
+section.login > .container > form ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+section.login > .container > form ul.errorlist>li{
+  font-size: 16px;
+  font-weight: 700;
+  color: red;
+  margin-bottom: 10px;
+}
+section.login > .container > form:has(ul.errorlist)>p>input{
+  border-color: red !important;
+}
+section.login > .container > form:has(ul.errorlist)>button{
+  background-color: red !important;
+}

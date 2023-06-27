@@ -1,0 +1,31 @@
+{% extends 'adminBase.html' %} 
+
+{% load static %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/productVariation.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="productVarList">
+  <div class="wrapper">
+    <div class="top">
+      <h4>All Avaliable Products Variations</h4>
+      <a class="btn btn-black px-3" role="button" href="{% url  'productVariationCreate' %}">Add more</a>
+    </div>
+    <div class="container">
+      {% for productVar in object_list%}
+      <div class="productVarCard">
+        <h4>{{ productVar.name }}</h4>
+        <div class="btns">
+          <a class="btn btn-info px-3" role="button" href="{% url 'productVariationUpdate' productVar.pk %}">edit</a>
+          <a class="btn btn-danger px-3" role="button" href="{% url 'productVariationDelete' productVar.pk %}">delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

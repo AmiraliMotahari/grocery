@@ -1,0 +1,33 @@
+{% extends 'adminBase.html' %} 
+
+{% load static %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/inventoryProduct.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="inventoryProductList">
+  <div class="wrapper">
+    <div class="top">
+      <h4>All Avaliable inventory Products</h4>
+      <a class="btn btn-black px-3" role="button" href="{% url  'inventoryProductCreate' %}">Add more</a>
+    </div>
+    <div class="container">
+      {% for inventoryProduct in object_list%}
+      <div class="inventoryProductCard">
+        <h4>{{ inventoryProduct.productId.name }}</h4>
+        <h4>{{ inventoryProduct.inventoryId.cityId.name }}</h4>
+        <h4>{{ inventoryProduct.quantity }}</h4>
+        <div class="btns">
+          <a class="btn btn-info px-3" role="button" href="{% url 'inventoryProductUpdate' inventoryProduct.pk %}">edit</a>
+          <a class="btn btn-danger px-3" role="button" href="{% url 'inventoryProductDelete' inventoryProduct.pk %}">delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

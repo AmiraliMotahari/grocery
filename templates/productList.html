@@ -1,0 +1,35 @@
+{% extends 'adminBase.html' %} 
+
+{% load static %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="productList">
+  <div class="wrapper">
+    <div class="top">
+      <h4>All Avaliable Products</h4>
+      <a class="btn btn-black px-3" role="button" href="{% url  'productCreate' %}">Add more</a>
+    </div>
+    <div class="container">
+      {% for product in object_list%}
+      <div class="productCard">
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.price }}</p>
+        <p>{{ product.quantity }}</p>
+        <p>{{ product.pType }}</p>
+        <p>{{ product.cityId }}</p>
+        <div class="btns">
+          <a class="btn btn-info px-3" role="button" href="{% url 'productUpdate' product.pk %}">edit</a>
+          <a class="btn btn-danger px-3" role="button" href="{% url 'productDelete' product.pk %}">delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

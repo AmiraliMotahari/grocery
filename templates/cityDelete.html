@@ -1,0 +1,24 @@
+{% extends 'adminBase.html' %} 
+{% load static %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/cityList.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="cityDelete">
+  <div class="container">
+    <div class="card">
+
+      <form action="" method="POST">
+        <legend>Delete</legend>
+        {% csrf_token %} {{ form.as_p }}
+        <p>Are you sure you want to delete "{{ city.name }}"?</p>
+        <input class="btn btn-danger" type="submit" value="Confirm" />
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,66 @@
+{% extends 'adminBase.html' %} 
+{% load static %}
+
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/adminHome.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+<section class="bigNav mb-14">
+  <div class="wrapper">
+    <h2 class="py-3 px-4 text-center">welcome admin!</h2>
+    <div class="row w-50 mx-auto mt-5">
+      <div class="col-sm-6">
+        <div class="card mb-3">
+          <a class="text-capitalize text-black fs-6" href="{% url 'productList' %}"
+            ><span class="fa-regular fa-cube me-1"></span
+            ><span>products</span></a
+          >
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card mb-3">
+          <a class="text-capitalize text-black fs-6" href="{% url 'productVariationList' %}">
+            <span class="fa-regular fa-cubes"></span>
+            <span>products variations</span></a
+          >
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card mb-3">
+          <a class="text-capitalize text-black fs-6" href="{% url 'cityList' %}">
+          <span class="fa-regular fa-city"></span>
+          <span>cities</span></a
+        >
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card mb-3">
+          <a class="text-capitalize text-black fs-6" href="{% url 'supplierList' %}">
+          <span class="fa-regular fa-boxes-packing"></span>
+          <span>suppliers</span></a
+        >
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card mb-3">
+          <a class="text-capitalize text-black fs-6" href="{% url 'inventoryList' %}">
+          <span class="fa-regular fa-warehouse-full me-1"></span>
+          <span>inventories</span></a
+        >
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card mb-3">
+          <a class="text-capitalize text-black fs-6" href="{% url 'inventoryProductList' %}">
+          <span class="fa-regular fa-shelves me-1"></span>
+          <span>inventory products</span></a
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

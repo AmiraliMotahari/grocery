@@ -1,0 +1,230 @@
+section.productVarList {
+  width: 100%;
+  padding: 50px 20px;
+}
+section.productVarList > .wrapper {
+  display: flex;
+  width: 80%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 15px;
+  /* background-color: gray; */
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  row-gap: 20px;
+}
+section.productVarList > .wrapper > .top {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 1200px){
+  section.productVarList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px){
+  section.productVarList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.productVarList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+section.productVarList > .wrapper > .container > .productVarCard {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  transition: 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+section.productVarList > .wrapper > .container > .productVarCard > h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #333;
+}
+section.productVarList > .wrapper > .container > .productVarCard> .btns{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: 300ms;
+    transform: translate(0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+section.productVarList > .wrapper > .container > .productVarCard:hover > .btns{
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+/* productVar create */
+section.productVarCreate {
+  width: 100%;
+  padding: 20px;
+}
+section.productVarCreate > .container {
+  display: flex;
+  width: 80%;
+  /* height: 80vh; */
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.productVarCreate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.productVarCreate > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+section.productVarCreate > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+
+section.productVarCreate > .container > .card > form > p {
+  display: flex;
+  width: 40%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.productVarCreate > .container > .card > form > p > input, section.productVarCreate > .container > .card > form > p > select {
+  width: 100%;
+}
+
+/* productVar update */
+section.productVarUpdate {
+  width: 100%;
+  padding: 20px;
+}
+section.productVarUpdate > .container {
+  display: flex;
+  width: 80%;
+  /* height: 80vh; */
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.productVarUpdate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.productVarUpdate > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+section.productVarUpdate > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+section.productVarUpdate > .container > .card > form > p {
+  display: flex;
+  width: 40%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.productVarUpdate > .container > .card > form > p > input, section.productVarUpdate > .container > .card > form > p > select {
+  width: 100%;
+}
+
+/* productVar delete */
+section.productVarDelete {
+  width: 100%;
+  padding: 20px;
+}
+section.productVarDelete > .container {
+  display: flex;
+  width: 80%;
+  /* height: 80vh; */
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.productVarDelete > .container > .card {
+  width: 300px;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.productVarDelete > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
+}
+section.productVarDelete > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}

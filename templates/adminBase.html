@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The_Mt Shop</title>
+    <link rel="stylesheet" href="{% static 'mdb-ui-kit/css/mdb.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'FontAwesome.Pro.6.2.1/css/all.css' %}"
+    />
+    {% block cssLinks %}{% endblock cssLinks %}
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <section id="menu" class="container-fluid">
+        <div class="row">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container">
+              <!-- Navbar brand -->
+              <a class="navbar-brand me-2" href="{% url 'adminHome' %}">
+                <img
+                  src="{% static 'img/mylogo.png' %}"
+                  height="16"
+                  alt="MDB Logo"
+                  loading="lazy"
+                  style="margin-top: -1px"
+                />
+              </a>
+
+              <!-- Toggle button -->
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarButtonsExample"
+                aria-controls="navbarButtonsExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+
+              <!-- Collapsible wrapper -->
+              <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-capitalize"
+                      href="{% url 'adminHome' %}"
+                      ><span class="fa-regular fa-home me-1"></span>home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-capitalize"
+                      href="{% url 'productList' %}"
+                      ><span class="fa-regular fa-cube me-1"></span>products</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-capitalize" href="{% url 'productVariationList' %}">
+                      <span class="fa-regular fa-cubes"></span>
+                      products variations</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-capitalize"
+                      href="{% url 'cityList' %}"
+                    >
+                      <span class="fa-regular fa-city"></span>
+                      cities</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-capitalize" href="{% url 'supplierList' %}">
+                      <span class="fa-regular fa-boxes-packing "></span>
+                      suppliers</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-capitalize" href="{% url 'inventoryList' %}">
+                      <span class="fa-regular fa-warehouse-full me-1"></span>
+                      inventories</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-capitalize" href="{% url 'inventoryProductList' %}"
+                      >
+                      <span class="fa-regular fa-shelves me-1"></span>
+                      inventory products</a
+                    >
+                  </li>
+                </ul>
+                <!-- Left links -->
+
+                <div class="d-flex align-items-center">
+                  {% if user.is_authenticated %}
+                     <a class="btn btn-danger px-3 me-2" role="button" href="{% url 'logout' %}">Log Out</a>
+                  {% endif %}
+                 
+                  
+                </div>
+              </div>
+              <!-- Collapsible wrapper -->
+            </div>
+            <!-- Container wrapper -->
+          </nav>
+          <!-- Navbar -->
+        </div>
+      </section>
+    </header>
+    <!--main-->
+    <main>{% block content %} {% endblock content %}</main>
+    <footer
+      class="text-center text-white fixed-bottom"
+      style="background-color: #21081a;"
+    >
+      <!-- Grid container -->
+      <div class="container p-4"></div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 Copyright:
+        <a class="text-white" href="#">The_Mt.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <script src="{% static 'mdb-ui-kit/js/mdb.min.js' %}"></script>
+  </body>
+</html>

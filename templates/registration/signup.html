@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+{% endblock cssLinks %} {% block content %}
+<section class="signup">
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="btn btn-success w-100 mt-3">Sign Up</button>
+    </form>
+  </div>
+</section>
+{% endblock content %}

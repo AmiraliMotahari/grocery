@@ -1,0 +1,17 @@
+{% extends 'adminBase.html' %} {% load static %} {% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/inventoryProduct.css' %}" />
+{% endblock cssLinks %} {% block content %}
+
+<section class="inventoryProductCreate mb-14">
+  <div class="container">
+    <div class="card">
+      <form action="" method="POST">
+        <legend>Add a new inventoryProduct</legend>
+        {% csrf_token %} {{ form.as_p }}
+        <input class="btn btn-success" type="submit" value="Save" />
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

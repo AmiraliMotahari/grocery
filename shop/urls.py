@@ -1,0 +1,31 @@
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('', HomePage.as_view(), name='home'),
+    path('adminHome/', AdminPage.as_view(), name='adminHome'),
+    path('adminHome/cityList/', CityListView.as_view(), name='cityList'),
+    path('adminHome/cityCreate/', CityCreateView.as_view(), name='cityCreate'),
+    path('adminHome/cityUpdate/<int:pk>/', CityUpdateView.as_view(), name='cityUpdate'),
+    path('adminHome/cityDelete/<int:pk>/', CityDeleteView.as_view(), name='cityDelete'),
+    path('adminHome/productList/', ProductListView.as_view(), name='productList'),
+    path('adminHome/productCreate/', ProductCreateView.as_view(), name='productCreate'),
+    path('adminHome/productUpdate/<int:pk>/', ProductUpdateView.as_view(), name='productUpdate'),
+    path('adminHome/productDelete/<int:pk>/', ProductDeleteView.as_view(), name='productDelete'),
+    path('adminHome/productVariationList/', ProductVariationListView.as_view(), name='productVariationList'),
+    path('adminHome/productVariationCreate/', ProductVariationCreateView.as_view(), name='productVariationCreate'),
+    path('adminHome/productVariationUpdate/<int:pk>/', ProductVariationUpdateView.as_view(), name='productVariationUpdate'),
+    path('adminHome/productVariationDelete/<int:pk>/', ProductVariationDeleteView.as_view(), name='productVariationDelete'),
+    path('adminHome/supplierList/', supplierListView.as_view(), name='supplierList'),
+    path('adminHome/supplierCreate/', supplierCreateView.as_view(), name='supplierCreate'),
+    path('adminHome/supplierUpdate/<int:pk>/', supplierUpdateView.as_view(), name='supplierUpdate'),
+    path('adminHome/supplierDelete/<int:pk>/', supplierDeleteView.as_view(), name='supplierDelete'),
+    path('adminHome/inventoryList/', inventoryListView.as_view(), name='inventoryList'),
+    path('adminHome/inventoryCreate/', inventoryCreateView.as_view(), name='inventoryCreate'),
+    path('adminHome/inventoryUpdate/<int:pk>/', inventoryUpdateView.as_view(), name='inventoryUpdate'),
+    path('adminHome/inventoryDelete/<int:pk>/', inventoryDeleteView.as_view(), name='inventoryDelete'),
+    path('adminHome/inventoryProductList/', inventoryProductListView.as_view(), name='inventoryProductList'),
+    path('adminHome/inventoryProductCreate/', inventoryProductCreateView.as_view(), name='inventoryProductCreate'),
+    path('adminHome/inventoryProductUpdate/<int:pk>/', inventoryProductUpdateView.as_view(), name='inventoryProductUpdate'),
+    path('adminHome/inventoryProductDelete/<int:pk>/', inventoryProductDeleteView.as_view(), name='inventoryProductDelete'),
+]
