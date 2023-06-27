@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The_Mt Shop</title>
+    <link rel="stylesheet" href="{% static 'mdb-ui-kit/css/mdb.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'FontAwesome.Pro.6.2.1/css/all.css' %}"
+    />
+    {% block cssLinks %}
+    {% endblock cssLinks %}
+  </head>
+  <body>
+    <!--main-->
+    <main>{% block content %} {% endblock content %}</main>
+    <script src="{% static 'mdb-ui-kit/js/mdb.min.js' %}"></script>
+  </body>
+</html>

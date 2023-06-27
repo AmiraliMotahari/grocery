@@ -1,5 +1,6 @@
 section.bigNav{
     width: 100%;
+    background-color: white;
 }
 section.bigNav>.wrapper{
     width: 75%;

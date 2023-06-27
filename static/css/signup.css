@@ -1,18 +1,29 @@
 section.signup {
   width: 100%;
+  min-height: 100vh;
   padding: 50px 20px;
+  background-color: white;
 }
 section.signup > .container {
   display: flex;
-  width: 30%;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   padding: 50px 10px;
-  margin: 0 auto;
+  margin: 50px auto;
   border-radius: 15px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
   row-gap: 20px;
+}
+@media screen and (min-width:992px){
+    section.signup > .container{
+        width: 30%;
+    }
+}
+@media screen and (max-width:992px){
+    section.signup > .container{
+        width: 90%;
+    }
 }
 section.signup > .container > form{
   display: flex;
@@ -28,7 +39,7 @@ section.signup > .container > form > p{
   justify-content: center;
   align-items: start;
 }
-section.signup > .container > form > p> input,section.signup > .container > form > p> label{
+section.signup > .container > form > p> input,section.signup > .container > form > p> select,section.signup > .container > form > p> label{
   width: 100%;
 }
 section.signup > .container > form > p> input{

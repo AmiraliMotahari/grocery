@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'baseForm.html' %}
 
 {% load static %}
 
@@ -16,6 +16,7 @@
             {{ form.as_p }}
             <button type="submit" class="btn btn-success w-100 mt-3">Log In</button>
         </form>
+        <p>Don't have an account?<a href="{% url 'signup' %}" class="ms-1">Sign Up</a></p>
     </div>
 </section>
 

@@ -1,6 +1,7 @@
 section.cityList {
   width: 100%;
   padding: 50px 20px;
+  background-color: white;
 }
 section.cityList > .wrapper {
   display: flex;

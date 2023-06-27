@@ -1,6 +1,7 @@
 section.inventoryProductList {
   width: 100%;
   padding: 50px 20px;
+  background-color: white;
 }
 section.inventoryProductList > .wrapper {
   display: flex;

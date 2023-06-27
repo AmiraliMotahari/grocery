@@ -1,6 +1,7 @@
 section.supplierList {
   width: 100%;
   padding: 50px 20px;
+  background-color: white;
 }
 section.supplierList > .wrapper {
   display: flex;
