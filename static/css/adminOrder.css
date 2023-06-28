@@ -1,0 +1,230 @@
+section.adminOrderList {
+  width: 100%;
+  padding: 50px 20px;
+  background-color: white;
+}
+section.adminOrderList > .wrapper {
+  display: flex;
+  width: 80%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 15px;
+  /* background-color: gray; */
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  row-gap: 20px;
+}
+section.adminOrderList > .wrapper > .top {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 1200px){
+  section.adminOrderList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px){
+  section.adminOrderList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.adminOrderList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+section.adminOrderList > .wrapper > .container > .adminOrderCard {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  transition: 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+section.adminOrderList > .wrapper > .container > .adminOrderCard > h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #333;
+}
+section.adminOrderList > .wrapper > .container > .adminOrderCard> .btns{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: 300ms;
+    transform: translate(0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+section.adminOrderList > .wrapper > .container > .adminOrderCard:hover > .btns{
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+/* adminOrder create */
+section.adminOrderCreate {
+  width: 100%;
+  padding: 20px;
+}
+section.adminOrderCreate > .container {
+  display: flex;
+  width: 80%;
+  /* height: 80vh; */
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.adminOrderCreate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminOrderCreate > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+section.adminOrderCreate > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+
+section.adminOrderCreate > .container > .card > form > p {
+  display: flex;
+  width: 40%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.adminOrderCreate > .container > .card > form > p > input, section.adminOrderCreate > .container > .card > form > p > select {
+  width: 100%;
+}
+
+/* adminOrder update */
+section.adminOrderUpdate {
+  width: 100%;
+  padding: 20px;
+}
+section.adminOrderUpdate > .container {
+  display: flex;
+  width: 80%;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.adminOrderUpdate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminOrderUpdate > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+section.adminOrderUpdate > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+section.adminOrderUpdate > .container > .card > form > p {
+  display: flex;
+  width: 40%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.adminOrderUpdate > .container > .card > form > p > input, section.adminOrderUpdate > .container > .card > form > p > select {
+  width: 100%;
+}
+
+/* adminOrder delete */
+section.adminOrderDelete {
+  width: 100%;
+  padding: 20px;
+}
+section.adminOrderDelete > .container {
+  display: flex;
+  width: 80%;
+  /* height: 80vh; */
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.adminOrderDelete > .container > .card {
+  width: 300px;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminOrderDelete > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
+}
+section.adminOrderDelete > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}

@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <section id="swiper" class="container-fluid mt-3">
   <div class="row">
@@ -100,68 +100,35 @@
     <!-- Carousel wrapper -->
   </div>
 </section>
-<section id="categuries" class="container-fluid">
+<section id="categuries" class="container-fluid mb-5">
   <div class="row">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <h2 class="text-uppercase text-center mt-5 pt-5">Categories</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4 px-5">
+      {% for pvar in object_list%}
       <div class="col">
         <div class="card h-100">
           <img
-            src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp"
+            src="{% static 'img/' %}{{pvar.name}}.png"
             class="card-img-top"
-            alt="Skyscrapers"
+            style="height:340px;"
+            alt="{{ pvar.name }}"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+            <h3 class="card-title text-center text-capitalize">{{ pvar.name }}</h3>
+            <!--change-->
+            <p class="card-text text-center">
+              <a
+                href="{% url 'userProductList' pk=pvar.pk%}"
+                class="btn btn-success mt-3 w-50"
+                role="btn"
+                >buy</a
+              >
             </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card h-100">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp"
-            class="card-img-top"
-            alt="Los Angeles Skyscrapers"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp"
-            class="card-img-top"
-            alt="Palm Springs Road"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
+
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -175,13 +142,13 @@
           <!----><!---->
           <section draggable="false" class="container pt-5" data-v-271253ee="">
             <section class="mb-10">
-              <h2 class="fw-bold mb-5 text-center">Why is it so great?</h2>
+              <h2 class="fw-bold mb-5 text-center">Why is us?</h2>
               <div class="row gx-lg-5 align-items-center">
                 <div class="col-lg-5 mb-5 mb-lg-0">
                   <div
                     class="bg-image rounded-5 shadow-5-strong"
                     style="
-                      background-image: url('https://mdbootstrap.com/img/new/textures/full/98.jpg');
+                      background-image: url('{% static '/img/banner1.jpeg' %}');
                       height: 560px;
                       background-size: cover;
                       background-color: rgba(0, 0, 0, 0);
@@ -326,9 +293,9 @@
             <section class="mb-10">
               <!-- Background image -->
               <div
-                class="p-5 text-center bg-image"
+                class="p-5 text-center bg-image rounded-6"
                 style="
-                  background-image: url('https://mdbootstrap.com/img/new/textures/full/154.jpg');
+                  background-image: url('{% static '/img/banner2.jpeg' %}');
                   height: 500px;
                   background-size: cover;
                   background-color: rgba(0, 0, 0, 0);
@@ -352,7 +319,7 @@
                   </h1>
                   <a
                     class="btn btn-danger btn-lg py-3 px-5 mb-2 me-2"
-                    href="#"
+                    href="#categuries"
                     role="button"
                     aria-controls="#picker-editor"
                     draggable="false"

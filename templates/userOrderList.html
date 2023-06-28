@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/userOrderList.css' %}">
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="userOrderList mb-5">
+
+  <div class="container-fluid">
+    <h2 class="text-capitalize w-75 m-5 px-2">your orders:</h2>
+    <div class="row">
+      <table class="w-75 mx-auto my-2 ">
+        <thead class="bg-info">
+            <tr>
+                <th>product</th>
+                <th>count</th>
+                <th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for o in object_list %}
+            <tr class="">
+              <td>{{ o.product.productId.name }}</td>
+              <td>{{ o.quantity }}</td>
+              <td>{{ o.status }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+  </div>
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'adminBase.html' %} 
+
+{% load static %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/adminOrder.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="adminOrderList mb-14">
+  <div class="wrapper">
+    <div class="top">
+      <h4>All Avaliable adminOrders</h4>
+      <a class="btn btn-black px-3" role="button" href="{% url  'adminOrderCreate' %}">Add more</a>
+    </div>
+    <div class="container">
+      {% for adminOrder in object_list%}
+      <div class="adminOrderCard">
+        {% comment %} <h4>{{ adminOrder.user }}</h4> {% endcomment %}
+        <p>{{ adminOrder.product }}</p>
+        <p>{{ adminOrder.quantity }}</p>
+        <p>{{ adminOrder.status }}</p>
+        <div class="btns">
+          <a class="btn btn-info px-3" role="button" href="{% url 'adminOrderUpdate' adminOrder.pk %}">edit</a>
+          <a class="btn btn-danger px-3" role="button" href="{% url 'adminOrderDelete' adminOrder.pk %}">delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

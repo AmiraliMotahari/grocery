@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section class="userProductList mb-5">
+  <div class="container-fluid">
+    <div class="row">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4 px-5">
+      {% for prod in object_list %}
+        <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title text-center text-capitalize">{{ prod.productId.name }}</h3>
+                <p class="text-center mt-2">for 1Kgs</p>
+                <p class="text-center mt-2">{{ prod.quantity }}</p>
+                <p class="card-text text-center">
+                  <a
+                    href="{% url 'userOrder' prod.pk %}"
+                    class="btn btn-success mt-3 w-50"
+                    role="btn"
+                    >buy</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+              <p>No products found.</p>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+</section>
+{% endblock content %}

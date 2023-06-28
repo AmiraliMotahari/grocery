@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section class="orderFail mb-5">
+  <div class="container-fluid">
+    <div class="row">
+      <h1 class="text-center text-capitalize mt-5 text-danger">your order was failed</h1>
+      <p class="text-center text-capitalize mt-3">something went wrong!</p>
+      <a href="{% url 'home' %}" class="text-center text-capitalize btn btn-danger w-25 mx-auto mt-3" role="btn">back to home</a>
+  </div>
+  </div>
+</section>
+{% endblock content %}

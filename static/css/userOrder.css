@@ -1,0 +1,32 @@
+section.userOrder{
+    width: 100%;
+
+}
+section.userOrder> .container-fluid{
+    width: 100%;
+}
+section.userOrder> .container-fluid>.row{
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+    border-radius: 15px;
+}
+h2,h5{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+section.userOrder> .container-fluid>.row>form{
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    
+}
+section.userOrder> .container-fluid>.row>form>label{
+    font-size: 18px;
+    font-weight: 700;
+}

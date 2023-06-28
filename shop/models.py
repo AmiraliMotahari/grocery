@@ -54,8 +54,8 @@ class InventoryProduct(models.Model):
     inventoryId = models.ForeignKey(Inventory, on_delete=models.CASCADE, verbose_name="Inventory City")
     quantity = models.IntegerField()
     
-    def __str__(self): 
-        return (self.inventoryId)+" "+(self.productId)
+    def __str__(self):
+        return self.productId.name
     
     def get_absolute_url(self): # 
         return reverse('inventoryProductList')
@@ -69,10 +69,35 @@ class Supplier(models.Model):
     address = models.CharField(max_length=200, default='')
     
     def __str__(self): 
-        return self.name
+        return self.LastName
     
-    def get_absolute_url(self): # 
+    def get_absolute_url(self): 
         return reverse('supplierList')
+ 
+    
+from accounts.models import CustomUser   
+    
+class Order(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,default='')
+    product = models.ForeignKey(InventoryProduct, on_delete=models.CASCADE,default='')
+    quantity = models.PositiveIntegerField(blank=False, null=False, default=0)
+    
+    SUBMITTED = 'submitted'
+    READY_TO_SEND = 'ready to send'
+    STATUS_CHOICES = [(SUBMITTED, 'submitted'),
+        (READY_TO_SEND, 'ready to send'),]
+    
+    status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=SUBMITTED)
+  
+    def __str__(self):
+        return str ('{name} ({prod} * {quan})'.format(name=self.user.username, prod=self.product, quan=self.quantity))
+    
+    # def get_absolute_url(self): 
+    #     return reverse('AdminOrderList')
+    
+    
+    #   return self.user.first_name
+    
 
     
         

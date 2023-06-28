@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/userOrder.css' %}">
+{% endblock cssLinks %}
+{% block content %}
+
+<section class="userOrder mb-5">
+  <div class="container-fluid">
+    <div class="row">
+      <h2 class="text-dark">Finish your purchase</h2>
+      <h5 class="text-warning">{{ productInventory }}</h5>
+      <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <label class="label">quantity</label>
+            <input name="quantity" type="number" value="1" class="input w-50" />
+            <input type="submit" href="{% url 'userOrder' productInventory.pk %}" class="btn btn-success w-50" value="Buy">
+      </form>
+  </div>
+  </div>
+</section>
+{% endblock content %}

@@ -6,14 +6,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The_Mt Shop</title>
+    <title>The_Mt's Grocery</title>
     <link rel="stylesheet" href="{% static 'mdb-ui-kit/css/mdb.min.css' %}" />
     <link
       rel="stylesheet"
       href="{% static 'FontAwesome.Pro.6.2.1/css/all.css' %}"
     />
+    <link rel="icon" href="{% static 'img/mylogo.png' %}">
     {% block cssLinks %}
     {% endblock cssLinks %}
+    <style>
+      main{
+        min-height: 335px;
+      }
+    </style>
   </head>
   <body>
     <!--header-->
@@ -53,10 +59,10 @@
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link text-capitalize" href="#">home</a>
+                    <a class="nav-link text-capitalize" href="{% url 'home' %}">home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link capitalize" href="#">Dashboard</a>
+                    <a class="nav-link text-capitalize" href="{% url 'userOrderList' %}">orders</a>
                   </li>
                 </ul>
                 <!-- Left links -->
@@ -137,12 +143,10 @@
                   <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                     <!-- Content -->
                     <h6 class="text-uppercase fw-bold mb-4">
-                      <i class="fas fa-gem me-3 text-secondary"></i>Company name
+                      <i class="fas fa-gem me-3 text-secondary"></i>The_Mt's Grocery
                     </h6>
                     <p>
-                      Here you can use rows and columns to organize your footer
-                      content. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit.
+                      A top-notch grocery shop for competition stands out with its exceptional product range, competitive prices, innovative marketing strategies, and excellent customer experience.
                     </p>
                   </div>
                   <!-- Grid column -->
@@ -152,37 +156,19 @@
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">Products</h6>
                     <p>
-                      <a href="#!" class="text-reset">Angular</a>
+                      <a href="#!" class="text-reset">Pistachio</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-reset">React</a>
+                      <a href="#!" class="text-reset">Hazelnut</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-reset">Vue</a>
+                      <a href="#!" class="text-reset">almonds</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-reset">Laravel</a>
+                      <a href="#!" class="text-reset">peanut</a>
                     </p>
                   </div>
                   <!-- Grid column -->
-
-                  <!-- Grid column -->
-                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
-                    <p>
-                      <a href="#!" class="text-reset">Pricing</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">Settings</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">Orders</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">Help</a>
-                    </p>
-                  </div>
                   <!-- Grid column -->
 
                   <!-- Grid column -->
@@ -218,9 +204,9 @@
               class="text-center p-4"
               style="background-color: rgba(0, 0, 0, 0.025)"
             >
-              © 2021 Copyright:
+              © 2023 Copyright:
               <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
-                >MDBootstrap.com</a
+                >The_Mt.com</a
               >
             </div>
             <!-- Copyright -->

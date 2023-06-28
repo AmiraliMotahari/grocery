@@ -1,0 +1,11 @@
+section.userOrderList{
+    width: 100%;
+
+}
+section.userOrderList> .container-fluid>.row>table>tbody>tr>td,
+section.userOrderList> .container-fluid>.row>table>thead>tr>th{
+    padding: 10px;
+}
+section.userOrderList> .container-fluid>.row>table>tbody>tr:nth-of-type(even){
+    background-color: rgba(0, 0, 0, 0.226)
+}
