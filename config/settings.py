@@ -133,3 +133,5 @@ LOGOUT_REDIRECT_URL = 'home'
 
 #custom user
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+

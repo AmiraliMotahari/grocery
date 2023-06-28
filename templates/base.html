@@ -33,7 +33,7 @@
               <!-- Navbar brand -->
               <a class="navbar-brand me-2" href="{% url 'home' %}">
                 <img
-                  src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+                  src="{% static '/img/mylogo.png' %}"
                   height="16"
                   alt="MDB Logo"
                   loading="lazy"
@@ -73,10 +73,40 @@
                   {% if user.is_authenticated %}
                     {% if user.is_superuser %}
                         <a class="btn btn-warning px-3 me-2" role="button" href="{% url 'adminHome' %}">Admin Dashboard</a>
-                    {% else %} 
-                      <a class="btn btn-warning px-3 me-2" role="button" href="#">{{ user.username }}</a>
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-info dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-mdb-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            more
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="{% url 'passwordChange' %}">Change Password</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                          </ul>
+                        </div>
+                    {% else %}
+                      <div class="dropdown">
+                          <button
+                            class="btn btn-warning dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-mdb-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            {{ user.username }}
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="{% url 'passwordChange' %}">Change Password</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                          </ul>
+                        </div>
                     {% endif %}
-                    <a class="btn btn-danger px-3 me-2" role="button" href="{% url 'logout' %}">Logout</a>
+                    
+                    
                   {% else %}
                     <a class="btn btn-primary px-3 me-2" role="button" href="{% url 'login' %}">Login</a>
                     <a class="btn btn-secondary px-3 me-2" role="button" href="{% url 'signup' %}">Sign Up</a>
@@ -205,7 +235,7 @@
               style="background-color: rgba(0, 0, 0, 0.025)"
             >
               © 2023 Copyright:
-              <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+              <a class="text-reset fw-bold" href="#"
                 >The_Mt.com</a
               >
             </div>
