@@ -12,7 +12,6 @@ section.adminOrderList > .wrapper {
   padding: 20px;
   margin: 0 auto;
   border-radius: 15px;
-  /* background-color: gray; */
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
   row-gap: 20px;
 }
@@ -23,6 +22,7 @@ section.adminOrderList > .wrapper > .top {
   justify-content: space-between;
   align-items: center;
 }
+
 @media screen and (min-width: 1200px){
   section.adminOrderList > .wrapper > .container {
     display: grid;
@@ -91,22 +91,24 @@ section.adminOrderList > .wrapper > .container > .adminOrderCard> .btns{
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    padding: 20px;
 }
 section.adminOrderList > .wrapper > .container > .adminOrderCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
 }
-
+section.adminOrderList > .wrapper > .container > .adminOrderCard> .btns>a{
+  width: 100%;/*new*/
+}
 
 /* adminOrder create */
-section.adminOrderCreate {
+/* section.adminOrderCreate {
   width: 100%;
   padding: 20px;
 }
 section.adminOrderCreate > .container {
   display: flex;
   width: 80%;
-  /* height: 80vh; */
   flex-flow: row;
   justify-content: center;
   align-items: center;
@@ -134,7 +136,6 @@ section.adminOrderCreate > .container > .card > form > legend {
   text-transform: capitalize;
   margin-bottom: 40px;
 }
-
 section.adminOrderCreate > .container > .card > form > p {
   display: flex;
   width: 40%;
@@ -142,9 +143,10 @@ section.adminOrderCreate > .container > .card > form > p {
   justify-content: center;
   align-items: start;
 }
-section.adminOrderCreate > .container > .card > form > p > input, section.adminOrderCreate > .container > .card > form > p > select {
+section.adminOrderCreate > .container > .card > form > p > input,
+section.adminOrderCreate > .container > .card > form > p > select {
   width: 100%;
-}
+} */
 
 /* adminOrder update */
 section.adminOrderUpdate {
@@ -160,7 +162,7 @@ section.adminOrderUpdate > .container {
   margin-top: 50px;
 }
 section.adminOrderUpdate > .container > .card {
-  width: 100%;
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -172,26 +174,34 @@ section.adminOrderUpdate > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+  padding: 20px;
 }
 section.adminOrderUpdate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 section.adminOrderUpdate > .container > .card > form > p {
   display: flex;
-  width: 40%;
+  width: 100%;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: start;
 }
-section.adminOrderUpdate > .container > .card > form > p > input, section.adminOrderUpdate > .container > .card > form > p > select {
+section.adminOrderUpdate > .container > .card > form > p > input,
+section.adminOrderUpdate > .container > .card > form > p > select {
   width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
-
+section.adminOrderUpdate > .container > .card > form > input,
+section.adminOrderUpdate > .container > .card > form > a{
+  width: 50%;
+}
 /* adminOrder delete */
 section.adminOrderDelete {
   width: 100%;
@@ -200,14 +210,13 @@ section.adminOrderDelete {
 section.adminOrderDelete > .container {
   display: flex;
   width: 80%;
-  /* height: 80vh; */
   flex-flow: row;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
 section.adminOrderDelete > .container > .card {
-  width: 300px;
+  width: auto;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -219,12 +228,17 @@ section.adminOrderDelete > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 50px;
+  padding: 20px;
 }
 section.adminOrderDelete > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+section.adminOrderDelete > .container > .card > form > input,
+section.adminOrderDelete > .container > .card > form > a{
+  width: 100%;
 }

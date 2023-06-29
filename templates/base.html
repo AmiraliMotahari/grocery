@@ -16,6 +16,9 @@
     {% block cssLinks %}
     {% endblock cssLinks %}
     <style>
+      *{
+        box-sizing: border-box !important;
+      }
       main{
         min-height: 335px;
       }
@@ -63,6 +66,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-capitalize" href="{% url 'userOrderList' %}">orders</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-capitalize" href="{% url 'about' %}">About Us</a>
                   </li>
                 </ul>
                 <!-- Left links -->

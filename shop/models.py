@@ -63,13 +63,13 @@ class InventoryProduct(models.Model):
     
 class Supplier(models.Model):
     firstName = models.CharField(max_length=50, default='')
-    LastName = models.CharField(max_length=50, default='')
+    lastName = models.CharField(max_length=50, default='')
     phoneNum = models.CharField(null=False, blank=False, default="", unique=True, max_length=50)
     email = models.EmailField(default='')
     address = models.CharField(max_length=200, default='')
     
     def __str__(self): 
-        return self.LastName
+        return self.lastName
     
     def get_absolute_url(self): 
         return reverse('supplierList')
@@ -91,9 +91,9 @@ class Order(models.Model):
   
     def __str__(self):
         return str ('{name} ({prod} * {quan})'.format(name=self.user.username, prod=self.product, quan=self.quantity))
-    
-    # def get_absolute_url(self): 
-    #     return reverse('AdminOrderList')
+
+    def get_absolute_url(self): 
+        return reverse('adminOrderList')
     
     
     #   return self.user.first_name

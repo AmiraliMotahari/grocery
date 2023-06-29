@@ -72,6 +72,7 @@ section.productVarList > .wrapper > .container > .productVarCard > h4 {
   text-align: center;
   font-size: 24px;
   line-height: 24px;
+  font-weight: 700;
   text-transform: capitalize;
   color: #333;
 }
@@ -91,10 +92,14 @@ section.productVarList > .wrapper > .container > .productVarCard> .btns{
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    padding: 20px;
 }
 section.productVarList > .wrapper > .container > .productVarCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
+}
+section.productVarList > .wrapper > .container > .productVarCard> .btns>a{
+  width: 100%;/*new*/
 }
 
 
@@ -106,14 +111,13 @@ section.productVarCreate {
 section.productVarCreate > .container {
   display: flex;
   width: 80%;
-  /* height: 80vh; */
   flex-flow: row;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
 section.productVarCreate > .container > .card {
-  width: 100%;
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -129,21 +133,29 @@ section.productVarCreate > .container > .card > form {
 section.productVarCreate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
   margin-bottom: 40px;
 }
 
 section.productVarCreate > .container > .card > form > p {
   display: flex;
-  width: 40%;
+  width: 100%;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: start;
 }
-section.productVarCreate > .container > .card > form > p > input, section.productVarCreate > .container > .card > form > p > select {
+section.productVarCreate > .container > .card > form > p > input, 
+section.productVarCreate > .container > .card > form > p > select {
   width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+section.productVarCreate > .container > .card > form > input,
+section.productVarCreate > .container > .card > form > a{
+  width: 50%;
 }
 
 /* productVar update */
@@ -161,7 +173,7 @@ section.productVarUpdate > .container {
   margin-top: 50px;
 }
 section.productVarUpdate > .container > .card {
-  width: 100%;
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -173,24 +185,33 @@ section.productVarUpdate > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+  padding: 20px;
 }
 section.productVarUpdate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 section.productVarUpdate > .container > .card > form > p {
   display: flex;
-  width: 40%;
+  width: 100%;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: start;
 }
-section.productVarUpdate > .container > .card > form > p > input, section.productVarUpdate > .container > .card > form > p > select {
+section.productVarUpdate > .container > .card > form > p > input, 
+section.productVarUpdate > .container > .card > form > p > select {
   width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+section.productVarUpdate > .container > .card > form > input,
+section.productVarUpdate > .container > .card > form > a{
+  width: 50%;
 }
 
 /* productVar delete */
@@ -201,14 +222,13 @@ section.productVarDelete {
 section.productVarDelete > .container {
   display: flex;
   width: 80%;
-  /* height: 80vh; */
   flex-flow: row;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
 section.productVarDelete > .container > .card {
-  width: 300px;
+  width: auto;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -220,12 +240,17 @@ section.productVarDelete > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 50px;
+  padding: 20px;
 }
 section.productVarDelete > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+section.productVarDelete > .container > .card > form > input,
+section.productVarDelete > .container > .card > form > a{
+  width: 100%;
 }

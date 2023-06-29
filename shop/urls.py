@@ -29,10 +29,11 @@ urlpatterns = [
     path('adminHome/inventoryProductUpdate/<int:pk>/', InventoryProductUpdateView.as_view(), name='inventoryProductUpdate'),
     path('adminHome/inventoryProductDelete/<int:pk>/', InventoryProductDeleteView.as_view(), name='inventoryProductDelete'),
     path('adminHome/adminOrderList/', AdminOrderListView.as_view(), name='adminOrderList'),
-    path('adminHome/adminOrderCreate/', AdminOrderCreateView.as_view(), name='adminOrderCreate'),
+    # path('adminHome/adminOrderCreate/', AdminOrderCreateView.as_view(), name='adminOrderCreate'),
     path('adminHome/adminOrderUpdate/<int:pk>/', AdminOrderUpdateView.as_view(), name='adminOrderUpdate'),
     path('adminHome/adminOrderDelete/<int:pk>/', AdminOrderDeleteView.as_view(), name='adminOrderDelete'),
     path('userProductList/<int:pk>', UserProductList.as_view(), name='userProductList'),
     path('userOrder/<int:pk>', userOrderSubmitView, name='userOrder'),
     path('userOrderList/', UserOrderList.as_view(), name='userOrderList'),
+    path('about/', About.as_view(), name='about'),
 ]

@@ -17,12 +17,12 @@
     <div class="container">
       {% for supplier in object_list%}
       <div class="supplierCard">
-        <h4>{{ supplier.name }}</h4>
-        <p>{{ supplier.phoneNum }}</p>
-        <p>{{ supplier.email }}</p>
-        <p>{{ supplier.address }}</p>
+        <h4>{{ supplier.firstName }} {{ supplier.lastName }}</h4>
+        <p><span class="text-capitalize text-center me-1">Phone number:</span>{{ supplier.phoneNum }}</p>
+        <p><span class="text-capitalize text-center me-1">email:</span>{{ supplier.email }}</p>
+        <p><span class="text-capitalize text-center me-1">address:</span>{{ supplier.address }}</p>
         <div class="btns">
-          <a class="btn btn-info px-3" role="button" href="{% url 'supplierUpdate' supplier.pk %}">edit</a>
+          <a class="btn btn-warning px-3" role="button" href="{% url 'supplierUpdate' supplier.pk %}">edit</a>
           <a class="btn btn-danger px-3" role="button" href="{% url 'supplierDelete' supplier.pk %}">delete</a>
         </div>
       </div>

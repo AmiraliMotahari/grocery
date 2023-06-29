@@ -8,7 +8,8 @@
       <form action="" method="POST">
         <legend>Edit</legend>
         {% csrf_token %} {{ form.as_p }}
-        <input class="btn btn-info" type="submit" value="Update" />
+        <input class="btn btn-warning" type="submit" value="Update" />
+        <a href="{% url 'productList' %}" class="btn btn-info">cancel</a>
       </form>
     </div>
   </div>

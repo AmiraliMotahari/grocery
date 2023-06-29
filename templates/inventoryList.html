@@ -19,7 +19,7 @@
       <div class="inventoryCard">
         <h4>{{ inventory.cityId.name }}</h4>
         <div class="btns">
-          <a class="btn btn-info px-3" role="button" href="{% url 'inventoryUpdate' inventory.pk %}">edit</a>
+          <a class="btn btn-warning px-3" role="button" href="{% url 'inventoryUpdate' inventory.pk %}">edit</a>
           <a class="btn btn-danger px-3" role="button" href="{% url 'inventoryDelete' inventory.pk %}">delete</a>
         </div>
       </div>

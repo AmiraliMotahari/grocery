@@ -8,7 +8,8 @@
       <form action="" method="POST">
         <legend>Add a new product</legend>
         {% csrf_token %} {{ form.as_p }}
-        <input class="btn btn-success" type="submit" value="Save" />
+        <input class="btn btn-success w-25" type="submit" value="Save" />
+        <a href="{% url 'productList' %}" class="btn btn-info w-25">cancel</a>
       </form>
     </div>
   </div>

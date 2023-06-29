@@ -18,12 +18,12 @@
       {% for product in object_list%}
       <div class="productCard">
         <h4>{{ product.name }}</h4>
-        <p>{{ product.price }}</p>
-        <p>{{ product.quantity }}</p>
-        <p>{{ product.pType }}</p>
-        <p>{{ product.cityId }}</p>
+        <p class="text-capitalize"><span class="text-capitalize text-center me-1">Price:</span>{{ product.price }}</p>
+        <p class="text-capitalize"><span class="text-capitalize text-center me-1">quantity:</span>{{ product.quantity }}</p>
+        <p class="text-capitalize"><span class="text-capitalize text-center me-1">product variation:</span>{{ product.pType }}</p>
+        <p class="text-capitalize"><span class="text-capitalize text-center me-1">city:</span>{{ product.cityId }}</p>
         <div class="btns">
-          <a class="btn btn-info px-3" role="button" href="{% url 'productUpdate' product.pk %}">edit</a>
+          <a class="btn btn-warning px-3" role="button" href="{% url 'productUpdate' product.pk %}">edit</a>
           <a class="btn btn-danger px-3" role="button" href="{% url 'productDelete' product.pk %}">delete</a>
         </div>
       </div>

@@ -50,8 +50,10 @@ section.login > .container > form > p> input,section.login > .container > form >
 section.login > .container > form > p> input{
   all: unset;
   width: 100%;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
 }
 section.login > .container > form>p>input:focus:valid{
   border-color: #14A44D !important;
@@ -75,4 +77,8 @@ section.login > .container > form:has(ul.errorlist)>p>input{
 }
 section.login > .container > form:has(ul.errorlist)>button{
   background-color: red !important;
+}
+section.login > .container > form>button,section.login > .container > form>a{
+  width: 100%;
+  margin-top: 20px;
 }

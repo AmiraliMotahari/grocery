@@ -9,6 +9,7 @@
         <legend>Add a new inventoryProduct</legend>
         {% csrf_token %} {{ form.as_p }}
         <input class="btn btn-success" type="submit" value="Save" />
+        <a href="{% url 'inventoryProductList' %}" class="btn btn-info">cancel</a>
       </form>
     </div>
   </div>

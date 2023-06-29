@@ -39,14 +39,20 @@ section.signup > .container > form > p{
   justify-content: center;
   align-items: start;
 }
-section.signup > .container > form > p> input,section.signup > .container > form > p> select,section.signup > .container > form > p> label{
-  width: 100%;
-}
+
 section.signup > .container > form > p> input{
   all: unset;
   width: 100%;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 5px;
+  padding: 0 10px;
+}
+section.signup > .container > form > p> select{
+  all: unset;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 section.signup > .container > form>p>input:focus:valid{
   border-color: #14A44D !important;

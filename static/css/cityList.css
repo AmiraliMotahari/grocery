@@ -73,6 +73,7 @@ section.cityList > .wrapper > .container > .cityCard > h4 {
   text-align: center;
   font-size: 24px;
   line-height: 24px;
+  font-weight: 700;
   text-transform: capitalize;
   color: #333;
 }
@@ -92,17 +93,15 @@ section.cityList > .wrapper > .container > .cityCard> .btns{
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    padding: 20px;
 }
 section.cityList > .wrapper > .container > .cityCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
 }
-/* section.cityList > .wrapper > .container > .cityCard > .btns {
-  display: none;
+section.cityList > .wrapper > .container > .cityCard> .btns>a{
+  width: 100%;
 }
-section.cityList > .wrapper > .container > .cityCard:hover > .btns {
-  display: block;
-} */
 
 /* city create */
 section.cityCreate {
@@ -136,12 +135,28 @@ section.cityCreate > .container > .card > form {
 section.cityCreate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
   margin-bottom: 40px;
 }
-
+section.cityCreate > .container > .card > form > p {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.cityCreate > .container > .card > form > p > input, section.cityCreate > .container > .card > form > p > select {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+section.cityCreate > .container > .card > form > input,
+section.cityCreate > .container > .card > form > a{
+  width: 50%;
+}
 
 
 
@@ -153,14 +168,13 @@ section.cityUpdate {
 section.cityUpdate > .container {
   display: flex;
   width: 80%;
-  /* height: 80vh; */
   flex-flow: row;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
 section.cityUpdate > .container > .card {
-  width: 300px;
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -172,16 +186,34 @@ section.cityUpdate > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 50px;
+  padding: 20px;
 }
 section.cityUpdate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
-
+section.cityUpdate > .container > .card > form > p {
+  display: flex;
+  width: 100%;/*new*/
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.cityUpdate > .container > .card > form > p > input, 
+section.cityUpdate > .container > .card > form > p > select {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+section.cityUpdate > .container > .card > form > input,
+section.cityUpdate > .container > .card > form > a{
+  width: 50%;
+}
 
 
 /* city delete */
@@ -192,14 +224,13 @@ section.cityDelete {
 section.cityDelete > .container {
   display: flex;
   width: 80%;
-  /* height: 80vh; */
   flex-flow: row;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
 section.cityDelete > .container > .card {
-  width: 300px;
+  width: auto;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -211,12 +242,17 @@ section.cityDelete > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 50px;
+  padding: 20px;
 }
 section.cityDelete > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+section.cityDelete > .container > .card > form > input,
+section.cityDelete > .container > .card > form > a{
+  width: 100%;
 }

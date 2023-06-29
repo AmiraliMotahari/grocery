@@ -8,7 +8,9 @@
       <form action="" method="POST">
         <legend>Add a new product variation</legend>
         {% csrf_token %} {{ form.as_p }}
+        <p class="fs-6 fst-italic text-danger text-center" >Important: include a photo with the exact name as your categories with .png type!</p>
         <input class="btn btn-success" type="submit" value="Save" />
+        <a href="{% url 'productVariationList' %}" class="btn btn-info">cancel</a>
       </form>
     </div>
   </div>

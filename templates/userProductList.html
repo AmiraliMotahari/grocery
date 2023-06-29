@@ -14,9 +14,9 @@
                 <p class="card-text text-center">
                   <a
                     href="{% url 'userOrder' prod.pk %}"
-                    class="btn btn-success mt-3 w-50"
+                    class="btn btn-success mt-3 w-50 {% if prod.quantity <= 0 %} disabled btn-danger {% endif %}"
                     role="btn"
-                    >buy</a
+                    >{% if prod.quantity > 0 %} Buy  {% else %} out of stock {% endif %}</a
                   >
                 </p>
               </div>

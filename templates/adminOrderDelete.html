@@ -11,11 +11,14 @@
       <form action="" method="POST">
         <legend>Delete</legend>
         {% csrf_token %} {{ form.as_p }}
-        <p>Are you sure you want to delete "{{ city.name }}"?</p>
+        <p>Are you sure you want to delete "<span class="fw-bold mx-1 text-capitalize">{{ object.product.productId.name }}</span>"?</p>
         <input class="btn btn-danger" type="submit" value="Confirm" />
+        <a href="{% url 'adminOrderList' %}" class="btn btn-info">cancel</a>
       </form>
     </div>
   </div>
 </section>
 
 {% endblock content %}
+
+

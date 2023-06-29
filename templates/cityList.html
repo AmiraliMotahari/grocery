@@ -19,7 +19,7 @@
       <div class="cityCard">
         <h4>{{ city.name }}</h4>
         <div class="btns">
-          <a class="btn btn-info px-3" role="button" href="{% url 'cityUpdate' city.pk %}">edit</a>
+          <a class="btn btn-warning px-3" role="button" href="{% url 'cityUpdate' city.pk %}">edit</a>
           <a class="btn btn-danger px-3" role="button" href="{% url 'cityDelete' city.pk %}">delete</a>
         </div>
       </div>

@@ -19,7 +19,7 @@
       <div class="productVarCard">
         <h4>{{ productVar.name }}</h4>
         <div class="btns">
-          <a class="btn btn-info px-3" role="button" href="{% url 'productVariationUpdate' productVar.pk %}">edit</a>
+          <a class="btn btn-warning px-3" role="button" href="{% url 'productVariationUpdate' productVar.pk %}">edit</a>
           <a class="btn btn-danger px-3" role="button" href="{% url 'productVariationDelete' productVar.pk %}">delete</a>
         </div>
       </div>

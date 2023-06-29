@@ -72,6 +72,7 @@ section.supplierList > .wrapper > .container > .supplierCard > h4 {
   text-align: center;
   font-size: 24px;
   line-height: 24px;
+  font-weight: 700;
   text-transform: capitalize;
   color: #333;
 }
@@ -91,12 +92,15 @@ section.supplierList > .wrapper > .container > .supplierCard> .btns{
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    padding: 20px;/*mew*/
 }
 section.supplierList > .wrapper > .container > .supplierCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
 }
-
+section.supplierList > .wrapper > .container > .supplierCard> .btns>a{
+  width: 100%;/*new*/
+}
 
 /* supplier create */
 section.supplierCreate {
@@ -106,14 +110,13 @@ section.supplierCreate {
 section.supplierCreate > .container {
   display: flex;
   width: 80%;
-  /* height: 80vh; */
   flex-flow: row;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
 section.supplierCreate > .container > .card {
-  width: 100%;
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -125,26 +128,36 @@ section.supplierCreate > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+  padding: 20px;
 }
 section.supplierCreate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 section.supplierCreate > .container > .card > form > p {
   display: flex;
-  width: 40%;
+  width: 100%;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: start;
 }
-section.supplierCreate > .container > .card > form > p > input, section.supplierCreate > .container > .card > form > p > select {
+section.supplierCreate > .container > .card > form > p > input, 
+section.supplierCreate > .container > .card > form > p > select {
   width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px;
 }
+section.supplierCreate > .container > .card > form > input,
+section.supplierCreate > .container > .card > form > a{
+  width: 50%;
+}
+
 
 /* supplier update */
 section.supplierUpdate {
@@ -160,7 +173,7 @@ section.supplierUpdate > .container {
   margin-top: 50px;
 }
 section.supplierUpdate > .container > .card {
-  width: 100%;
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -172,14 +185,15 @@ section.supplierUpdate > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+  padding: 20px;
 }
 section.supplierUpdate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 section.supplierUpdate > .container > .card > form > p {
   display: flex;
@@ -188,8 +202,23 @@ section.supplierUpdate > .container > .card > form > p {
   justify-content: center;
   align-items: start;
 }
-section.supplierUpdate > .container > .card > form > p > input, section.supplierUpdate > .container > .card > form > p > select {
+section.supplierUpdate > .container > .card > form > p {
+  display: flex;
+  width: 100%;/*new*/
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.supplierUpdate > .container > .card > form > p > input, 
+section.supplierUpdate > .container > .card > form > p > select {
   width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+section.supplierUpdate > .container > .card > form > input,
+section.supplierUpdate > .container > .card > form > a{
+  width: 50%;
 }
 
 /* supplier delete */
@@ -207,7 +236,7 @@ section.supplierDelete > .container {
   margin-top: 50px;
 }
 section.supplierDelete > .container > .card {
-  width: 300px;
+  width: auto;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -219,12 +248,17 @@ section.supplierDelete > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 50px;
+  padding: 20px;
 }
 section.supplierDelete > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+section.supplierDelete > .container > .card > form > input,
+section.supplierDelete > .container > .card > form > a{
+  width: 100%;
 }

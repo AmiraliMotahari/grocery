@@ -91,12 +91,15 @@ section.inventoryProductList > .wrapper > .container > .inventoryProductCard> .b
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    padding: 20px;
 }
 section.inventoryProductList > .wrapper > .container > .inventoryProductCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
 }
-
+section.inventoryProductList > .wrapper > .container > .inventoryProductCard> .btns>a{
+  width: 100%;/*new*/
+}
 
 /* inventoryProduct create */
 section.inventoryProductCreate {
@@ -113,7 +116,7 @@ section.inventoryProductCreate > .container {
   margin-top: 50px;
 }
 section.inventoryProductCreate > .container > .card {
-  width: 100%;
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -125,25 +128,34 @@ section.inventoryProductCreate > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+  padding: 20px;
 }
 section.inventoryProductCreate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 section.inventoryProductCreate > .container > .card > form > p {
   display: flex;
-  width: 40%;
+  width: 100%;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: start;
 }
-section.inventoryProductCreate > .container > .card > form > p > input, section.inventoryProductCreate > .container > .card > form > p > select {
+section.inventoryProductCreate > .container > .card > form > p > input,
+section.inventoryProductCreate > .container > .card > form > p > select {
   width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+section.inventoryProductCreate > .container > .card > form > input,
+section.inventoryProductCreate > .container > .card > form > a{
+  width: 50%;
 }
 
 /* inventoryProduct update */
@@ -160,7 +172,7 @@ section.inventoryProductUpdate > .container {
   margin-top: 50px;
 }
 section.inventoryProductUpdate > .container > .card {
-  width: 100%;
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -172,24 +184,32 @@ section.inventoryProductUpdate > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+  padding: 20px;
 }
 section.inventoryProductUpdate > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
+  font-size: 42px;
   line-height: 24px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 section.inventoryProductUpdate > .container > .card > form > p {
   display: flex;
-  width: 40%;
+  width: 100%;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: start;
 }
 section.inventoryProductUpdate > .container > .card > form > p > input, section.inventoryProductUpdate > .container > .card > form > p > select {
   width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+section.inventoryProductUpdate > .container > .card > form > input,
+section.inventoryProductUpdate > .container > .card > form > a{
+  width: 50%;
 }
 
 /* inventoryProduct delete */
@@ -207,7 +227,7 @@ section.inventoryProductDelete > .container {
   margin-top: 50px;
 }
 section.inventoryProductDelete > .container > .card {
-  width: 300px;
+  width: auto;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
@@ -219,12 +239,17 @@ section.inventoryProductDelete > .container > .card > form {
   justify-content: center;
   align-items: center;
   row-gap: 50px;
+  padding: 20px;
 }
 section.inventoryProductDelete > .container > .card > form > legend {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 42px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+section.inventoryProductDelete > .container > .card > form > input,
+section.inventoryProductDelete > .container > .card > form > a{
+  width: 100%;
 }

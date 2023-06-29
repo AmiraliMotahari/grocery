@@ -4,13 +4,8 @@ from .models import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-
-# class HomePage(TemplateView):
-#     template_name = 'home.html'
-    
-    
-    
-    
+from django import forms
+   
     
 #admin pages
 class AdminPage(TemplateView, LoginRequiredMixin):
@@ -25,16 +20,16 @@ class CityCreateView(CreateView):
 #     model = City
 #     template_name = 'forms_create.html'
     
-class CityListView(ListView):
+class CityListView(ListView,LoginRequiredMixin):
     model = City
     template_name = 'cityList.html'
     
-class CityUpdateView(UpdateView):
+class CityUpdateView(UpdateView,LoginRequiredMixin):
     model = City
     template_name = 'cityUpdate.html'
     fields = ['name']
     
-class CityDeleteView(DeleteView):
+class CityDeleteView(DeleteView,LoginRequiredMixin):
     model = City
     template_name = 'cityDelete.html'
     fields = ['name']
@@ -44,21 +39,21 @@ class CityDeleteView(DeleteView):
     
     
     
-class ProductCreateView(CreateView):
+class ProductCreateView(CreateView,LoginRequiredMixin):
     model = Product
     template_name = 'productCreate.html'
     fields = ['name','price', 'quantity', 'pType', 'cityId']
     
-class ProductListView(ListView):
+class ProductListView(ListView,LoginRequiredMixin):
     model = Product
     template_name = 'productList.html'
     
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(UpdateView,LoginRequiredMixin):
     model = Product
     template_name = 'productUpdate.html'
     fields = ['name','price', 'quantity', 'pType', 'cityId']
     
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(DeleteView,LoginRequiredMixin):
     model = Product
     template_name = 'productDelete.html'
     fields = ['name','price', 'quantity', 'pType', 'cityId']
@@ -66,63 +61,63 @@ class ProductDeleteView(DeleteView):
 
 
 
-class ProductVariationCreateView(CreateView):
+class ProductVariationCreateView(CreateView,LoginRequiredMixin):
     model = ProductVariation
     template_name = 'productVariationCreate.html'
     fields = ['name']
     
-class ProductVariationListView(ListView):
+class ProductVariationListView(ListView,LoginRequiredMixin):
     model = ProductVariation
     template_name = 'productVariationList.html'
     
-class ProductVariationUpdateView(UpdateView):
+class ProductVariationUpdateView(UpdateView,LoginRequiredMixin):
     model = ProductVariation
     template_name = 'productVariationUpdate.html'
     fields = ['name']
     
-class ProductVariationDeleteView(DeleteView):
+class ProductVariationDeleteView(DeleteView,LoginRequiredMixin):
     model = ProductVariation
     template_name = 'productVariationDelete.html'
     fields = ['name']
     success_url = reverse_lazy('productVariationList')
 
     
-class SupplierCreateView(CreateView):
+class SupplierCreateView(CreateView,LoginRequiredMixin):
     model = Supplier
     template_name = 'supplierCreate.html'
     fields = "__all__"
     
-class SupplierListView(ListView):
+class SupplierListView(ListView,LoginRequiredMixin):
     model = Supplier
     template_name = 'supplierList.html'
     
-class SupplierUpdateView(UpdateView):
+class SupplierUpdateView(UpdateView,LoginRequiredMixin):
     model = Supplier
     template_name = 'supplierUpdate.html'
     fields = "__all__"
     
-class SupplierDeleteView(DeleteView):
+class SupplierDeleteView(DeleteView,LoginRequiredMixin):
     model = Supplier
     template_name = 'supplierDelete.html'
     fields = "__all__"
     success_url = reverse_lazy('supplierList')
     
     
-class InventoryCreateView(CreateView):
+class InventoryCreateView(CreateView,LoginRequiredMixin):
     model = Inventory
     template_name = 'inventoryCreate.html'
     fields = "__all__"
     
-class InventoryListView(ListView):
+class InventoryListView(ListView,LoginRequiredMixin):
     model = Inventory
     template_name = 'inventoryList.html'
     
-class InventoryUpdateView(UpdateView):
+class InventoryUpdateView(UpdateView,LoginRequiredMixin):
     model = Inventory
     template_name = 'inventoryUpdate.html'
     fields = "__all__"
     
-class InventoryDeleteView(DeleteView):
+class InventoryDeleteView(DeleteView,LoginRequiredMixin):
     model = Inventory
     template_name = 'inventoryDelete.html'
     fields = "__all__"
@@ -130,43 +125,43 @@ class InventoryDeleteView(DeleteView):
     
     
     
-class InventoryProductCreateView(CreateView):
+class InventoryProductCreateView(CreateView,LoginRequiredMixin):
     model = InventoryProduct
     template_name = 'inventoryProductCreate.html'
     fields = "__all__"
     
-class InventoryProductListView(ListView):
+class InventoryProductListView(ListView,LoginRequiredMixin):
     model = InventoryProduct
     template_name = 'inventoryProductList.html'
     
-class InventoryProductUpdateView(UpdateView):
+class InventoryProductUpdateView(UpdateView,LoginRequiredMixin):
     model = InventoryProduct
     template_name = 'inventoryProductUpdate.html'
     fields = "__all__"
     
-class InventoryProductDeleteView(DeleteView):
+class InventoryProductDeleteView(DeleteView,LoginRequiredMixin):
     model = InventoryProduct
     template_name = 'inventoryProductDelete.html'
     fields = "__all__"
     success_url = reverse_lazy('inventoryProductList')
     
   
+#admin order create view is meaningless here 
+# class AdminOrderCreateView(CreateView,LoginRequiredMixin):
+#     model = Order
+#     template_name = 'adminOrderCreate.html'
+#     fields = ["product",'quantity','status']
     
-class AdminOrderCreateView(CreateView):
-    model = Order
-    template_name = 'adminOrderCreate.html'
-    fields = "__all__"
-    
-class AdminOrderListView(ListView):
+class AdminOrderListView(ListView,LoginRequiredMixin):
     model = Order
     template_name = 'adminOrderList.html'
     
-class AdminOrderUpdateView(UpdateView):
+class AdminOrderUpdateView(UpdateView,LoginRequiredMixin):
     model = Order
     template_name = 'adminOrderUpdate.html'
-    fields = "__all__"
+    fields = ["product",'quantity','status']
     
-class AdminOrderDeleteView(DeleteView):
+class AdminOrderDeleteView(DeleteView,LoginRequiredMixin):
     model = Order
     template_name = 'adminOrderDelete.html'
     fields = "__all__"
@@ -181,24 +176,17 @@ class HomePage(LoginRequiredMixin,ListView):
     template_name= 'home.html'
 
 
-class UserProductList(ListView):
+class UserProductList(ListView,LoginRequiredMixin):
     model = InventoryProduct
     template_name = 'userProductList.html'
     
     def get_queryset(self):
         variation_id = self.kwargs['pk']
-        # return InventoryProduct.objects.filter(productId__id=variation_id)
 
         product_ids = InventoryProduct.objects.filter(productId__pType_id=variation_id).values_list('productId_id', flat=True)
         
-        return InventoryProduct.objects.filter(id__in=product_ids)
-
-# class UserProductBuy(LoginRequiredMixin,ListView):
-#     model = InventoryProduct
-#     template_name= 'userOrder.html'
+        return InventoryProduct.objects.filter(inventoryId__cityId=self.request.user.city,id__in=product_ids)
     
-#     def get_queryset(self):
-#         return InventoryProduct.objects.filter(inventory__city=self.request.user.city)
 
 #user order ruls
 @login_required(login_url='login')
@@ -229,3 +217,6 @@ class UserOrderList(LoginRequiredMixin, ListView):
     
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user)
+    
+class About(TemplateView):
+    template_name="about.html"
