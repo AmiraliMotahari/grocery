@@ -185,7 +185,7 @@ class UserProductList(ListView,LoginRequiredMixin):
 
         product_ids = InventoryProduct.objects.filter(productId__pType_id=variation_id).values_list('productId_id', flat=True)
         
-        return InventoryProduct.objects.filter(inventoryId__cityId=self.request.user.city,id__in=product_ids)
+        return InventoryProduct.objects.filter(inventoryId__cityId=self.request.user.city, id__in=product_ids)
     
 
 #user order ruls

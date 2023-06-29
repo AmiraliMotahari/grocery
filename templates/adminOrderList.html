@@ -12,6 +12,7 @@
       {% for adminOrderList in object_list%}
       <div class="adminOrderCard">
         <h4>{{ adminOrderList.product.productId.name }}</h4>
+        <p class="userName">{{ adminOrderList.get_user_full_name }}</p>
         <p>{{ adminOrderList.quantity }}</p>
         <p class="{% if adminOrderList.status == "submitted" %} text-primary {% else %}text-success{% endif %} btn btn-outline-{% if adminOrderList.status == "submitted" %} text-primary {% else %}text-success{% endif %}">{{ adminOrderList.status }}</p>
         <div class="btns">
@@ -24,3 +25,15 @@
 </section>
 
 {% endblock content %}
+{% block js %}
+<script>
+ let userName = document.querySelectorAll(".userName");
+userName.forEach((elem) =>{
+  
+  if(elem.innerText === ""){
+    elem.innerText = "no name was found!"
+  }
+})
+</script>
+
+{% endblock js %}

@@ -16,4 +16,5 @@ class CustomUser(AbstractUser):
     def get_absolute_url(self):
         return reverse('home')
     
-    
+    def get_full_name(self) -> str:
+        return self.first_name + ' ' + self.last_name

@@ -90,13 +90,15 @@ class Order(models.Model):
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=SUBMITTED)
   
     def __str__(self):
-        return str ('{name} ({prod} * {quan})'.format(name=self.user.username, prod=self.product, quan=self.quantity))
+        return str ('{name} ({prod} * {quan})'.format(name=self.user.get_full_name(), prod=self.product, quan=self.quantity))
 
     def get_absolute_url(self): 
         return reverse('adminOrderList')
     
+    def get_user_full_name(self):
+        return str(self.user.first_name + ' ' + self.user.last_name)
     
-    #   return self.user.first_name
+    
     
 
     

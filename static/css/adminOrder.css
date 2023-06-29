@@ -29,7 +29,7 @@ section.adminOrderList > .wrapper > .top {
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 10px;
   }
 }
@@ -54,7 +54,7 @@ section.adminOrderList > .wrapper > .top {
   }
 }
 section.adminOrderList > .wrapper > .container > .adminOrderCard {
-  display: flex;
+  display: grid;
   width: 100%;
   flex-flow: column;
   justify-content: center;
@@ -74,6 +74,11 @@ section.adminOrderList > .wrapper > .container > .adminOrderCard > h4 {
   line-height: 24px;
   text-transform: capitalize;
   color: #333;
+}
+section.adminOrderList > .wrapper > .container > .adminOrderCard > p {
+  width: 100%;
+  text-transform: capitalize;
+  text-align: center;
 }
 section.adminOrderList > .wrapper > .container > .adminOrderCard> .btns{
     width: 100%;
