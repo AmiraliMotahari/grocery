@@ -11,11 +11,28 @@ section.userOrder> .container-fluid>.row{
     padding: 20px;
     box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
     border-radius: 15px;
+    justify-content: center;
+    align-items: center;
 }
-h2,h5{
+h2,h3{
     text-align: center;
     margin-bottom: 20px;
     text-transform: capitalize;
+}
+section.userOrder> .container-fluid>.row  .frame{
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  margin: 20px 0;
+  align-self: start;
+  padding: 0;
+}
+section.userOrder> .container-fluid>.row  .frame>img{
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
 }
 section.userOrder> .container-fluid>.row>form{
     display: flex;

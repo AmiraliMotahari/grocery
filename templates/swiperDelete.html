@@ -1,0 +1,25 @@
+{% extends 'adminBase.html' %} 
+{% load static %} {% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/swiper.css' %}" />
+{% endblock cssLinks %}
+{% block content %}
+
+<section class="swiperDelete mb-14">
+  <div class="container">
+    <div class="card">
+
+      <form action="" method="POST">
+        <legend>Delete</legend>
+        {% csrf_token %} {{ form.as_p }}
+        <div class="frame">
+          <img src="{{ object.imageUrl.url }}" alt="{{object.alt}}">
+        </div>
+        <p>Are you sure you want to delete "<span class="fw-bold mx-1 text-capitalize">{{ object.name }}</span>"?</p>
+        <input class="btn btn-danger" type="submit" value="Confirm" />
+        <a href="{% url 'swiperList' %}" class="btn btn-info">cancel</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

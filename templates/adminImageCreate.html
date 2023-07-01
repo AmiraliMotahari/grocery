@@ -1,0 +1,24 @@
+{% extends 'adminBase.html' %} {% load static %} {% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/adminImage.css' %}" />
+{% endblock cssLinks %} {% block content %}
+
+<section class="adminImageCreate mb-14">
+  <div class="container">
+    <div class="card">
+      <form action="" method="POST" enctype="multipart/form-data">
+        <legend>Add a new product</legend>
+        {% csrf_token %} {{ form.as_p }}
+        <input class="btn btn-success" type="submit" value="Save" />
+        <a href="{% url 'adminImageList' %}" class="btn btn-info">cancel</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+{% block js %}
+<script>
+  let img = document.querySelector("input[type:file]");
+  console.log(img);
+</script>
+{% endblock js %}

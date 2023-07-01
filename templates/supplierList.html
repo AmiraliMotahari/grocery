@@ -12,7 +12,7 @@
   <div class="wrapper">
     <div class="top">
       <h4>All Avaliable suppliers</h4>
-      <a class="btn btn-black px-3" role="button" href="{% url  'supplierCreate' %}">Add more</a>
+      <a class="btn btn-black px-3" href="{% url  'supplierCreate' %}">Add more</a>
     </div>
     <div class="container">
       {% for supplier in object_list%}
@@ -22,8 +22,8 @@
         <p><span class="text-capitalize text-center me-1">email:</span>{{ supplier.email }}</p>
         <p><span class="text-capitalize text-center me-1">address:</span>{{ supplier.address }}</p>
         <div class="btns">
-          <a class="btn btn-warning px-3" role="button" href="{% url 'supplierUpdate' supplier.pk %}">edit</a>
-          <a class="btn btn-danger px-3" role="button" href="{% url 'supplierDelete' supplier.pk %}">delete</a>
+          <a class="btn btn-warning px-3" href="{% url 'supplierUpdate' supplier.pk %}">edit</a>
+          <a class="btn btn-danger px-3" href="{% url 'supplierDelete' supplier.pk %}">delete</a>
         </div>
       </div>
       {% endfor %}

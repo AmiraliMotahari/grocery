@@ -2,9 +2,22 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
-
+class Image(models.Model):
+    name = models.CharField(max_length=200)
+    alt = models.CharField(max_length=200)
+    imageUrl = models.ImageField(upload_to="images/")
+        
+    def __str__(self):
+        return self.name
+        
+    def get_absolute_url(self):
+        return reverse('adminImageList')
+        
+        
+        
 class ProductVariation(models.Model):
     name = models.CharField(max_length=200, verbose_name="Category Name")
+    image  = models.ForeignKey(Image, on_delete=models.CASCADE, default='')
     
     def __str__(self): 
         return self.name
@@ -40,6 +53,7 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(verbose_name="Quantity in Kg")
     pType = models.ForeignKey(ProductVariation, on_delete=models.CASCADE, verbose_name="Category Name")
     cityId = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name="City Name")
+    image = models.ForeignKey(Image, on_delete=models.CASCADE,default='')
     
     def __str__(self): 
         return self.name
@@ -100,7 +114,19 @@ class Order(models.Model):
     
     
     
-
+class Swiper(models.Model):
+    name = models.CharField(max_length=50)
+    header = models.CharField(max_length=200)
+    pragraph = models.TextField(max_length=400)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE,default="none")
     
-        
-     
+    def __str__(self): 
+        return self.name
+    
+    def get_absolute_url(self): 
+        return reverse('swiperList')
+    
+    
+    
+    
+    

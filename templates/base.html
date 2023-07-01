@@ -12,14 +12,13 @@
       rel="stylesheet"
       href="{% static 'FontAwesome.Pro.6.2.1/css/all.css' %}"
     />
-    <link rel="icon" href="{% static 'img/mylogo.png' %}">
-    {% block cssLinks %}
-    {% endblock cssLinks %}
+    <link rel="icon" href="{% static 'img/mylogo.png' %}" />
+    {% block cssLinks %} {% endblock cssLinks %}
     <style>
-      *{
+      * {
         box-sizing: border-box !important;
       }
-      main{
+      main {
         min-height: 335px;
       }
     </style>
@@ -62,60 +61,103 @@
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link text-capitalize" href="{% url 'home' %}">home</a>
+                    <a class="nav-link text-capitalize" href="{% url 'home' %}"
+                      >home</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-capitalize" href="{% url 'userOrderList' %}">orders</a>
+                    <a class="nav-link text-capitalize {% if user.is_superuser %}disabled{% endif %}" href="{% url 'viewAllProducts'%}"
+                      >View all Products</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-capitalize" href="{% url 'about' %}">About Us</a>
+                    <a
+                      class="nav-link text-capitalize {% if user.is_superuser %}disabled{% endif %}"
+                      href="{% url 'userOrderList' %}"
+                      >orders</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-capitalize" href="{% url 'about' %}"
+                      >About Us</a
+                    >
                   </li>
                 </ul>
                 <!-- Left links -->
 
                 <div class="d-flex align-items-center">
-                  
-
-                  {% if user.is_authenticated %}
-                    {% if user.is_superuser %}
-                        <a class="btn btn-warning px-3 me-2" role="button" href="{% url 'adminHome' %}">Admin Dashboard</a>
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-info dropdown-toggle"
-                            type="button"
-                            id="dropdownMenuButton"
-                            data-mdb-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            more
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="{% url 'passwordChange' %}">Change Password</a></li>
-                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
-                          </ul>
-                        </div>
-                    {% else %}
-                      <div class="dropdown">
-                          <button
-                            class="btn btn-warning dropdown-toggle"
-                            type="button"
-                            id="dropdownMenuButton"
-                            data-mdb-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            {{ user.username }}
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="{% url 'passwordChange' %}">Change Password</a></li>
-                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
-                          </ul>
-                        </div>
-                    {% endif %}
-                    
-                    
+                  {% if user.is_authenticated %} {% if user.is_superuser %}
+                  <a
+                    class="btn btn-warning px-3 me-2"
+                    href="{% url 'adminHome' %}"
+                    >Admin Dashboard</a
+                  >
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-info dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-mdb-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      more
+                    </button>
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'passwordChange' %}"
+                          >Change Password</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="{% url 'logout' %}"
+                          >Logout</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
                   {% else %}
-                    <a class="btn btn-primary px-3 me-2" role="button" href="{% url 'login' %}">Login</a>
-                    <a class="btn btn-secondary px-3 me-2" role="button" href="{% url 'signup' %}">Sign Up</a>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-warning dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-mdb-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      {{ user.username }}
+                    </button>
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'passwordChange' %}"
+                          >Change Password</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="{% url 'logout' %}"
+                          >Logout</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  {% endif %} {% else %}
+                  <a class="btn btn-primary px-3 me-2" href="{% url 'login' %}"
+                    >Login</a
+                  >
+                  <a
+                    class="btn btn-secondary px-3 me-2"
+                    href="{% url 'signup' %}"
+                    >Sign Up</a
+                  >
                   {% endif %}
                 </div>
               </div>
@@ -130,7 +172,7 @@
     <!--main-->
     <main>{% block content %} {% endblock content %}</main>
     <!--footer-->
-    <footer>
+    <footer class="mt-5">
       <section class="container-fluid">
         <div class="row">
           <!-- Footer -->
@@ -179,10 +221,14 @@
                   <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                     <!-- Content -->
                     <h6 class="text-uppercase fw-bold mb-4">
-                      <i class="fas fa-gem me-3 text-secondary"></i>The_Mt's Grocery
+                      <i class="fas fa-gem me-3 text-secondary"></i>The_Mt's
+                      Grocery
                     </h6>
                     <p>
-                      A top-notch grocery shop for competition stands out with its exceptional product range, competitive prices, innovative marketing strategies, and excellent customer experience.
+                      A top-notch grocery shop for competition stands out with
+                      its exceptional product range, competitive prices,
+                      innovative marketing strategies, and excellent customer
+                      experience.
                     </p>
                   </div>
                   <!-- Grid column -->
@@ -241,9 +287,7 @@
               style="background-color: rgba(0, 0, 0, 0.025)"
             >
               © 2023 Copyright:
-              <a class="text-reset fw-bold" href="#"
-                >The_Mt.com</a
-              >
+              <a class="text-reset fw-bold" href="#">The_Mt.com</a>
             </div>
             <!-- Copyright -->
           </footer>

@@ -11,13 +11,16 @@
     <div class="container">
       {% for adminOrderList in object_list%}
       <div class="adminOrderCard">
+        <div class="frame">
+          <img src="{{ adminOrderList.product.productId.image.imageUrl.url }}" alt="{{adminOrderList.product.productId.image.alt}}" loading="lazy">
+        </div>
         <h4>{{ adminOrderList.product.productId.name }}</h4>
         <p class="userName">{{ adminOrderList.get_user_full_name }}</p>
         <p>{{ adminOrderList.quantity }}</p>
         <p class="{% if adminOrderList.status == "submitted" %} text-primary {% else %}text-success{% endif %} btn btn-outline-{% if adminOrderList.status == "submitted" %} text-primary {% else %}text-success{% endif %}">{{ adminOrderList.status }}</p>
         <div class="btns">
-          <a class="btn btn-warning" role="button" href="{% url 'adminOrderUpdate' adminOrderList.pk %}">edit</a>
-          <a class="btn btn-danger" role="button" href="{% url 'adminOrderDelete' adminOrderList.pk %}">delete</a>
+          <a class="btn btn-warning" href="{% url 'adminOrderUpdate' adminOrderList.pk %}">edit</a>
+          <a class="btn btn-danger" href="{% url 'adminOrderDelete' adminOrderList.pk %}">delete</a>
         </div>
       </div>
       {% endfor %}

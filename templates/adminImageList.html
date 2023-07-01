@@ -1,0 +1,36 @@
+{% extends 'adminBase.html' %} 
+
+{% load static %}
+
+{% block cssLinks %}
+  <link rel="stylesheet" href="{% static 'css/adminImage.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="adminImageList">
+  <div class="wrapper">
+    <div class="top">
+      <h4>All Avaliable Images</h4>
+      <a class="btn btn-black px-3" href="{% url  'adminImageCreate' %}">Add more</a>
+    </div>
+    <div class="container">
+      {% for adminImageList in object_list%}
+      <div class="adminImageCard">
+        <div class="frame">
+          <img src="{{ adminImageList.imageUrl.url }}" alt="{{adminImageList.alt}}" loading="lazy">
+        </div>
+        <h4>{{ adminImageList.name }}</h4>
+        <p class="text-capitalize"><span class="text-capitalize text-center me-1">alt:</span>{{ adminImageList.alt }}</p>
+        <p class="text-capitalize"><span class="text-capitalize text-center me-1">path:</span>{{ adminImageList.imageUrl }}</p>
+        <div class="btns">
+          <a class="btn btn-warning px-3" href="{% url 'adminImageUpdate' adminImageList.pk %}">edit</a>
+          <a class="btn btn-danger px-3" href="{% url 'adminImageDelete' adminImageList.pk %}">delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

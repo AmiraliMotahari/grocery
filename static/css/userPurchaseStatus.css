@@ -1,0 +1,47 @@
+section.orderSuccess {
+  width: 100%;
+  padding: 50px 20px;
+  background-color: white;
+}
+section.orderSuccess > .wrapper {
+  display: flex;
+  width: 80%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  row-gap: 20px;
+}
+section.orderSuccess > .wrapper > .top {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+  section.orderSuccess > .wrapper > .container {
+    width: 100%;
+  }
+section.orderSuccess > .wrapper > .container > .statusCard {
+  display: grid;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  padding: 25px;
+  transition: 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+section.orderSuccess > .wrapper > .container > .statusCard > p {
+  width: 100%;
+  text-transform: capitalize;
+  text-align: center;
+}
+section.orderSuccess > .wrapper > .container > .statusCard>a{
+  width: 100%;/*new*/
+}

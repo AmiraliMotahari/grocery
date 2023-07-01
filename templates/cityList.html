@@ -12,15 +12,15 @@
   <div class="wrapper">
     <div class="top">
       <h4>All Avaliable Cities</h4>
-      <a class="btn btn-black px-3" role="button" href="{% url 'cityCreate' %}">Add more</a>
+      <a class="btn btn-black px-3" href="{% url 'cityCreate' %}">Add more</a>
     </div>
     <div class="container">
       {% for city in object_list%}
       <div class="cityCard">
         <h4>{{ city.name }}</h4>
         <div class="btns">
-          <a class="btn btn-warning px-3" role="button" href="{% url 'cityUpdate' city.pk %}">edit</a>
-          <a class="btn btn-danger px-3" role="button" href="{% url 'cityDelete' city.pk %}">delete</a>
+          <a class="btn btn-warning px-3" href="{% url 'cityUpdate' city.pk %}">edit</a>
+          <a class="btn btn-danger px-3" href="{% url 'cityDelete' city.pk %}">delete</a>
         </div>
       </div>
       {% endfor %}

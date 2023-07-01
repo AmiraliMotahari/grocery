@@ -1,0 +1,36 @@
+{% extends 'adminBase.html' %} 
+
+{% load static %}
+
+{% block cssLinks %}
+  <link rel="stylesheet" href="{% static 'css/swiper.css' %}" />
+{% endblock cssLinks %}
+
+{% block content %}
+
+<section class="swiperList">
+  <div class="wrapper">
+    <div class="top">
+      <h4>All Avaliable Swiper Slides</h4>
+      <a class="btn btn-black px-3" href="{% url  'swiperCreate' %}">Add more</a>
+    </div>
+    <div class="container">
+      {% for swiperList in object_list%}
+      <div class="swiperCard">
+        <div class="frame">
+          <img src="{{ swiperList.image.imageUrl.url }}" alt="{{swiperListimage.alt}}" loading="lazy">
+        </div>
+        <h4>{{ swiperList.name }}</h4>
+        <p class="text-capitalize"><span class="text-capitalize text-center me-1">alt:</span>{{ swiperList.image.alt }}</p>
+        <p class="text-capitalize"><span class="text-capitalize text-center me-1">path:</span>{{ swiperList.image.imageUrl }}</p>
+        <div class="btns">
+          <a class="btn btn-warning px-3" href="{% url 'swiperUpdate' swiperList.pk %}">edit</a>
+          <a class="btn btn-danger px-3" href="{% url 'swiperDelete' swiperList.pk %}">delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

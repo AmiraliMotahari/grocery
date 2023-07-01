@@ -12,19 +12,22 @@
   <div class="wrapper">
     <div class="top">
       <h4>All Avaliable Products</h4>
-      <a class="btn btn-black px-3" role="button" href="{% url  'productCreate' %}">Add more</a>
+      <a class="btn btn-black px-3" href="{% url  'productCreate' %}">Add more</a>
     </div>
     <div class="container">
       {% for product in object_list%}
       <div class="productCard">
         <h4>{{ product.name }}</h4>
+        <div class="frame">
+          <img src="{{ product.image.imageUrl.url }}" alt="{{product.image.alt}} loading="lazy"">
+        </div>
         <p class="text-capitalize"><span class="text-capitalize text-center me-1">Price:</span>{{ product.price }}</p>
         <p class="text-capitalize"><span class="text-capitalize text-center me-1">quantity:</span>{{ product.quantity }}</p>
         <p class="text-capitalize"><span class="text-capitalize text-center me-1">product variation:</span>{{ product.pType }}</p>
         <p class="text-capitalize"><span class="text-capitalize text-center me-1">city:</span>{{ product.cityId }}</p>
         <div class="btns">
-          <a class="btn btn-warning px-3" role="button" href="{% url 'productUpdate' product.pk %}">edit</a>
-          <a class="btn btn-danger px-3" role="button" href="{% url 'productDelete' product.pk %}">delete</a>
+          <a class="btn btn-warning px-3" href="{% url 'productUpdate' product.pk %}">edit</a>
+          <a class="btn btn-danger px-3" href="{% url 'productDelete' product.pk %}">delete</a>
         </div>
       </div>
       {% endfor %}

@@ -9,7 +9,10 @@
   <div class="container-fluid">
     <div class="row">
       <h2 class="text-dark">Finish your purchase</h2>
-      <h5 class="text-warning">{{ productInventory }}</h5>
+      <h3 class="text-warning">{{ productInventory }}</h3>
+      <div class="frame">
+          <img src="{{ productInventory.productId.image.imageUrl.url }}" alt="{{productInventory.product.productId.image.alt}} loading="lazy"">
+        </div>
       <form action="" method="post">
             {% csrf_token %}
             {{ form.as_p }}

@@ -1,32 +1,33 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/userProductList.css' %}" />
+{% endblock cssLinks %} {% block content %}
 
-<section class="userProductList mb-5">
-  <div class="container-fluid">
-    <div class="row">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4 px-5">
+<section class="userProductList">
+  <div class="wrapper">
+    <div class="container">
       {% for prod in object_list %}
-        <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title text-center text-capitalize">{{ prod.productId.name }}</h3>
-                <p class="text-center mt-2">for 1Kgs</p>
-                <p class="text-center mt-2">{{ prod.quantity }}</p>
-                <p class="card-text text-center">
-                  <a
-                    href="{% url 'userOrder' prod.pk %}"
-                    class="btn btn-success mt-3 w-50 {% if prod.quantity <= 0 %} disabled btn-danger {% endif %}"
-                    role="btn"
-                    >{% if prod.quantity > 0 %} Buy  {% else %} out of stock {% endif %}</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-          {% empty %}
-              <p>No products found.</p>
+      <div class="userProductCard">
+        <div class="body">
+          <h3 class="card-title text-center text-capitalize">
+            {{ prod.productId.name }}
+          </h3>
+          <div class="frame">
+          <img src="{{ prod.productId.image.imageUrl.url }}" alt="{{prod.productId.image.alt}} loading="lazy"">
+        </div>
+          <p class="text-center mt-2">for 1Kgs</p>
+          <p class="text-center mt-2">{{ prod.quantity }}</p>
+          <p class="card-text text-center">
+            <a
+              href="{% url 'userOrder' prod.pk %}"
+              class="btn btn-success mt-3 w-50 {% if prod.quantity <= 0 %} disabled btn-danger {% endif %}"
+              >{% if prod.quantity > 0 %} Buy {% else %} out of stock {% endif%}</a>
+          </p>
+        </div>
+      </div>
+      {% empty %}
+      <p>No products found.</p>
       {% endfor %}
     </div>
-  </div>
   </div>
 </section>
 {% endblock content %}

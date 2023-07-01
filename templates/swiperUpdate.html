@@ -1,0 +1,22 @@
+{% extends 'adminBase.html' %} {% load static %} {% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/swiper.css' %}" />
+{% endblock cssLinks %} {% block content %}
+
+<section class="swiperUpdate mb-14">
+  <div class="container">
+    <div class="card">
+      <form action="" method="POST" enctype="multipart/form-data">
+        <legend>Edit</legend>
+        <div class="frame">
+          <img src="{{ object.image.imageUrl.url }}" alt="{{object.image.alt}}">
+        </div>
+        {% csrf_token %} {{ form.as_p }}
+        <input class="btn btn-warning" type="submit" value="Update" />
+        <a href="{% url 'swiperList' %}" class="btn btn-info">cancel</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+

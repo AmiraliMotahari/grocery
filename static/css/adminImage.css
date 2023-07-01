@@ -1,0 +1,308 @@
+section.adminImageList {
+  width: 100%;
+  padding: 50px 20px;
+  background-color: white;
+}
+section.adminImageList > .wrapper {
+  display: flex;
+  width: 80%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  row-gap: 20px;
+}
+section.adminImageList > .wrapper > .top {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 1200px){
+  section.adminImageList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: stretch;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px){
+  section.adminImageList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.adminImageList > .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+section.adminImageList > .wrapper > .container > .adminImageCard {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: 10px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  transition: 300ms ease;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+section.adminImageList > .wrapper > .container > .adminImageCard>.frame{
+  width: 100%;
+  /* height: 100px; */
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  margin-bottom: 10px;
+  align-self: start;
+}
+section.adminImageList > .wrapper > .container > .adminImageCard>.frame>img{
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+}
+section.adminImageList > .wrapper > .container > .adminImageCard > h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #333;
+}
+section.adminImageList > .wrapper > .container > .adminImageCard > p {
+  width: 100%;
+  text-transform: capitalize;
+  text-align: center;
+  word-wrap: break-word;
+}
+section.adminImageList > .wrapper > .container > .adminImageCard> .btns{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: 300ms;
+    transform: translate(0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    padding: 20px;
+}
+section.adminImageList > .wrapper > .container > .adminImageCard:hover > .btns{
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+section.adminImageList > .wrapper > .container > .adminImageCard> .btns>a{
+  width: 100%;/*new*/
+}
+
+/* adminImage create */
+section.adminImageCreate {
+  width: 100%;
+  padding: 20px;
+}
+section.adminImageCreate > .container {
+  display: flex;
+  width: 80%;
+  /* height: 80vh; */
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.adminImageCreate > .container > .card {
+  width: 40%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminImageCreate > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  padding: 20px;
+}
+section.adminImageCreate > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 42px;
+  line-height: 42px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+section.adminImageCreate > .container > .card > form > p {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.adminImageCreate > .container > .card > form > p > input,
+section.adminImageCreate > .container > .card > form > p > select {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+section.adminImageCreate > .container > .card > form > input,
+section.adminImageCreate > .container > .card > form > a{
+  width: 50%;
+}
+
+
+/* adminImage update */
+section.adminImageUpdate {
+  width: 100%;
+  padding: 20px;
+}
+section.adminImageUpdate > .container {
+  display: flex;
+  width: 80%;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.adminImageUpdate > .container > .card {
+  width: 40%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminImageUpdate > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  padding: 20px;
+}
+section.adminImageUpdate > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 42px;
+  line-height: 42px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+section.adminImageUpdate > .container > .card > form >.frame{
+  width: 300px;
+  /* height: 100px; */
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  margin-bottom: 10px;
+}
+section.adminImageUpdate > .container > .card > form >.frame>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+}
+section.adminImageUpdate > .container > .card > form > p {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+}
+section.adminImageUpdate > .container > .card > form > p > input,
+section.adminImageUpdate > .container > .card > form > p > select {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+section.adminImageUpdate > .container > .card > form > input,
+section.adminImageUpdate > .container > .card > form > a{
+  width: 50%;
+}
+/* adminImage delete */
+section.adminImageDelete {
+  width: 100%;
+  padding: 20px;
+}
+section.adminImageDelete > .container {
+  display: flex;
+  width: 80%;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+section.adminImageDelete > .container > .card {
+  width: auto;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminImageDelete > .container > .card > form {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
+  padding: 20px;
+}
+section.adminImageDelete > .container > .card > form > legend {
+  width: 100%;
+  text-align: center;
+  font-size: 42px;
+  line-height: 42px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+section.adminImageDelete > .container > .card > form >.frame{
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  margin-bottom: 10px;
+}
+section.adminImageDelete > .container > .card > form >.frame>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+}
+section.adminImageDelete > .container > .card > form > input,
+section.adminImageDelete > .container > .card > form > a{
+  width: 100%;
+}

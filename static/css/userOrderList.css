@@ -7,5 +7,5 @@ section.userOrderList> .container-fluid>.row>table>thead>tr>th{
     padding: 10px;
 }
 section.userOrderList> .container-fluid>.row>table>tbody>tr:nth-of-type(even){
-    background-color: rgba(0, 0, 0, 0.226)
+    background-color: rgba(0, 174, 189, 0.226)
 }

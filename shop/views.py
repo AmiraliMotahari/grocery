@@ -4,179 +4,223 @@ from .models import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django import forms
+from django.views import View
+# from .forms import POSTForm
    
     
 #admin pages
-class AdminPage(TemplateView, LoginRequiredMixin):
+class AdminPage(LoginRequiredMixin, TemplateView,):
     template_name = 'adminHome.html'  
     
-class CityCreateView(CreateView):
+class CityCreateView(LoginRequiredMixin, CreateView):
     model = City
     template_name = 'cityCreate.html'
     fields = ['name']
     
-# class CityDetailView(DetailView):
+# class CityDetailView(LoginRequiredMixin, DetailView):
 #     model = City
 #     template_name = 'forms_create.html'
     
-class CityListView(ListView,LoginRequiredMixin):
+class CityListView(LoginRequiredMixin, ListView):
     model = City
     template_name = 'cityList.html'
     
-class CityUpdateView(UpdateView,LoginRequiredMixin):
+class CityUpdateView(LoginRequiredMixin, UpdateView):
     model = City
     template_name = 'cityUpdate.html'
     fields = ['name']
     
-class CityDeleteView(DeleteView,LoginRequiredMixin):
+class CityDeleteView(LoginRequiredMixin, DeleteView):
     model = City
     template_name = 'cityDelete.html'
     fields = ['name']
-    success_url = reverse_lazy('cityList')
+    success_url = reverse_lazy(LoginRequiredMixin, 'cityList')
     
     
     
     
     
-class ProductCreateView(CreateView,LoginRequiredMixin):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     template_name = 'productCreate.html'
-    fields = ['name','price', 'quantity', 'pType', 'cityId']
+    fields = '__all__'
     
-class ProductListView(ListView,LoginRequiredMixin):
+class ProductListView(LoginRequiredMixin, ListView):
     model = Product
     template_name = 'productList.html'
     
-class ProductUpdateView(UpdateView,LoginRequiredMixin):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     template_name = 'productUpdate.html'
-    fields = ['name','price', 'quantity', 'pType', 'cityId']
+    fields = '__all__'
     
-class ProductDeleteView(DeleteView,LoginRequiredMixin):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     template_name = 'productDelete.html'
-    fields = ['name','price', 'quantity', 'pType', 'cityId']
-    success_url = reverse_lazy('productList')
+    fields = '__all__'
+    success_url = reverse_lazy(LoginRequiredMixin, 'productList')
 
 
 
-class ProductVariationCreateView(CreateView,LoginRequiredMixin):
+class ProductVariationCreateView(LoginRequiredMixin, CreateView):
     model = ProductVariation
     template_name = 'productVariationCreate.html'
-    fields = ['name']
+    fields = '__all__'
     
-class ProductVariationListView(ListView,LoginRequiredMixin):
+class ProductVariationListView(LoginRequiredMixin, ListView):
     model = ProductVariation
     template_name = 'productVariationList.html'
     
-class ProductVariationUpdateView(UpdateView,LoginRequiredMixin):
+class ProductVariationUpdateView(LoginRequiredMixin, UpdateView):
     model = ProductVariation
     template_name = 'productVariationUpdate.html'
-    fields = ['name']
+    fields = '__all__'
     
-class ProductVariationDeleteView(DeleteView,LoginRequiredMixin):
+class ProductVariationDeleteView(LoginRequiredMixin, DeleteView):
     model = ProductVariation
     template_name = 'productVariationDelete.html'
-    fields = ['name']
-    success_url = reverse_lazy('productVariationList')
+    fields = '__all__'
+    success_url = reverse_lazy(LoginRequiredMixin, 'productVariationList')
 
     
-class SupplierCreateView(CreateView,LoginRequiredMixin):
+class SupplierCreateView(LoginRequiredMixin, CreateView):
     model = Supplier
     template_name = 'supplierCreate.html'
     fields = "__all__"
     
-class SupplierListView(ListView,LoginRequiredMixin):
+class SupplierListView(LoginRequiredMixin, ListView):
     model = Supplier
     template_name = 'supplierList.html'
     
-class SupplierUpdateView(UpdateView,LoginRequiredMixin):
+class SupplierUpdateView(LoginRequiredMixin, UpdateView):
     model = Supplier
     template_name = 'supplierUpdate.html'
     fields = "__all__"
     
-class SupplierDeleteView(DeleteView,LoginRequiredMixin):
+class SupplierDeleteView(LoginRequiredMixin, DeleteView):
     model = Supplier
     template_name = 'supplierDelete.html'
     fields = "__all__"
-    success_url = reverse_lazy('supplierList')
+    success_url = reverse_lazy(LoginRequiredMixin, 'supplierList')
     
     
-class InventoryCreateView(CreateView,LoginRequiredMixin):
+class InventoryCreateView(LoginRequiredMixin, CreateView):
     model = Inventory
     template_name = 'inventoryCreate.html'
     fields = "__all__"
     
-class InventoryListView(ListView,LoginRequiredMixin):
+class InventoryListView(LoginRequiredMixin, ListView):
     model = Inventory
     template_name = 'inventoryList.html'
     
-class InventoryUpdateView(UpdateView,LoginRequiredMixin):
+class InventoryUpdateView(LoginRequiredMixin, UpdateView):
     model = Inventory
     template_name = 'inventoryUpdate.html'
     fields = "__all__"
     
-class InventoryDeleteView(DeleteView,LoginRequiredMixin):
+class InventoryDeleteView(LoginRequiredMixin, DeleteView):
     model = Inventory
     template_name = 'inventoryDelete.html'
     fields = "__all__"
-    success_url = reverse_lazy('inventoryList')
+    success_url = reverse_lazy(LoginRequiredMixin, 'inventoryList')
     
     
     
-class InventoryProductCreateView(CreateView,LoginRequiredMixin):
+class InventoryProductCreateView(LoginRequiredMixin, CreateView):
     model = InventoryProduct
     template_name = 'inventoryProductCreate.html'
     fields = "__all__"
     
-class InventoryProductListView(ListView,LoginRequiredMixin):
+class InventoryProductListView(LoginRequiredMixin, ListView):
     model = InventoryProduct
     template_name = 'inventoryProductList.html'
     
-class InventoryProductUpdateView(UpdateView,LoginRequiredMixin):
+class InventoryProductUpdateView(LoginRequiredMixin, UpdateView):
     model = InventoryProduct
     template_name = 'inventoryProductUpdate.html'
     fields = "__all__"
     
-class InventoryProductDeleteView(DeleteView,LoginRequiredMixin):
+class InventoryProductDeleteView(LoginRequiredMixin, DeleteView):
     model = InventoryProduct
     template_name = 'inventoryProductDelete.html'
     fields = "__all__"
-    success_url = reverse_lazy('inventoryProductList')
+    success_url = reverse_lazy(LoginRequiredMixin, 'inventoryProductList')
     
   
 #admin order create view is meaningless here 
-# class AdminOrderCreateView(CreateView,LoginRequiredMixin):
+# class AdminOrderCreateView(LoginRequiredMixin, CreateView):
 #     model = Order
 #     template_name = 'adminOrderCreate.html'
 #     fields = ["product",'quantity','status']
     
-class AdminOrderListView(ListView,LoginRequiredMixin):
+class AdminOrderListView(LoginRequiredMixin, ListView):
     model = Order
     template_name = 'adminOrderList.html'
     
-class AdminOrderUpdateView(UpdateView,LoginRequiredMixin):
+class AdminOrderUpdateView(LoginRequiredMixin, UpdateView):
     model = Order
     template_name = 'adminOrderUpdate.html'
     fields = ["product",'quantity','status']
     
-class AdminOrderDeleteView(DeleteView,LoginRequiredMixin):
+class AdminOrderDeleteView(LoginRequiredMixin, DeleteView):
     model = Order
     template_name = 'adminOrderDelete.html'
     fields = "__all__"
-    success_url = reverse_lazy('adminOrderList')
+    success_url = reverse_lazy(LoginRequiredMixin, 'adminOrderList')
+    
+   
+class AdminImageCreate(LoginRequiredMixin, CreateView):
+    model = Image
+    template_name = 'adminImageCreate.html'
+    fields = "__all__"
+    
+class AdminImageList(LoginRequiredMixin, ListView):
+    model = Image
+    template_name = 'adminImageList.html'
+    
+class AdminImageUpdate(LoginRequiredMixin, UpdateView):
+    model = Image
+    template_name = 'adminImageUpdate.html'
+    fields = "__all__"
+    
+class AdminImageDelete(LoginRequiredMixin, DeleteView):
+    model = Image
+    template_name = 'adminImageDelete.html'
+    fields = "__all__"
+    success_url = reverse_lazy(LoginRequiredMixin, 'adminImageList')
+   
+   
+# class SwiperCreate(LoginRequiredMixin, CreateView):
+#     model = Swiper
+#     template_name = 'swiperCreate.html'
+#     fields = "__all__"
+    
+# class SwiperList(LoginRequiredMixin, ListView):
+#     model = Swiper
+#     template_name = 'swiperList.html'
+    
+# class SwiperUpdate(LoginRequiredMixin, UpdateView):
+#     model = Swiper
+#     template_name = 'swiperUpdate.html'
+#     fields = "__all__"
+    
+# class SwiperDelete(LoginRequiredMixin, DeleteView):
+#     model = Swiper
+#     template_name = 'swiperDelete.html'
+#     fields = "__all__"
+#     success_url = reverse_lazy('swiperList')
    
    
    
  
 #user level
-class HomePage(LoginRequiredMixin,ListView):
+class HomePage(ListView):
     model = ProductVariation
     template_name= 'home.html'
+    context_object_name = 'pvarlist'
+        
 
-
-class UserProductList(ListView,LoginRequiredMixin):
+class UserProductList(LoginRequiredMixin,ListView):
     model = InventoryProduct
     template_name = 'userProductList.html'
     
@@ -220,3 +264,11 @@ class UserOrderList(LoginRequiredMixin, ListView):
     
 class About(TemplateView):
     template_name="about.html"
+    
+    
+class ViewAllProducts(LoginRequiredMixin,ListView):
+    model = InventoryProduct
+    template_name = "viewAll.html"
+    
+    def get_queryset(self):
+        return InventoryProduct.objects.filter(inventoryId__cityId=self.request.user.city)

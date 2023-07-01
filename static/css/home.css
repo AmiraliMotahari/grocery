@@ -1,0 +1,113 @@
+section#categuries{
+  width: 100%;
+  padding: 50px 20px;
+  background-color: white;
+}
+section#categuries> .wrapper {
+  display: flex;
+  width: 80%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 15px;
+  /* background-color: gray; */
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  row-gap: 20px;
+  padding: 40px 20px;
+}
+section#categuries> .wrapper > .top {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+section#categuries> .wrapper > .top>h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 42px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #333;
+}
+
+@media screen and (min-width: 1200px){
+  section#categuries> .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px){
+  section#categuries> .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  section#categuries> .wrapper > .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+section#categuries> .wrapper > .container > .pvarCard {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  transition: 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+section#categuries> .wrapper> .container > .pvarCard > .frame {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+  margin-bottom: 10px;
+}
+section#categuries> .wrapper> .container > .pvarCard > .frame > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+}
+
+section#categuries> .wrapper > .container > .pvarCard> .bottom{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    margin-top: 10px;
+}
+section#categuries> .wrapper > .container > .pvarCard> .bottom> h3{
+    width: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #333;
+}

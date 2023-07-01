@@ -1,12 +1,29 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} 
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static 'css/userPurchaseStatus.css' %}">
+{% endblock cssLinks %}
+
+{% block content %}
 
 <section class="orderSuccess mb-5">
-  <div class="container-fluid">
-    <div class="row">
-      <h1 class="text-center text-capitalize mt-5 text-success">your order was successful</h1>
-      <p class="text-center text-capitalize mt-3">trace your order</p>
-      <a href="{% url 'home' %}" class="text-center text-capitalize btn btn-info w-25 mx-auto mt-3" role="btn">back to home</a>
+  <div class="wrapper">
+  <div class="container">
+    <div class="statusCard">
+      <h1 class="text-center text-capitalize mt-5 text-success">
+        your order was successful
+      </h1>
+      <p class="text-center text-capitalize mt-3">
+        <a class="text-center text-capitalize btn btn-outline-success text-success w-50 mx-auto mt-3" href="{% url 'userOrderList' %}">trace your order!</a>
+      </p>
+      <a
+        href="{% url 'home' %}"
+        class="text-center text-capitalize btn btn-info w-50 mx-auto mt-3"
+        >back to home</a
+      >
+    </div>
   </div>
-  </div>
+</div>
 </section>
 {% endblock content %}
+
+

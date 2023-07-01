@@ -36,4 +36,13 @@ urlpatterns = [
     path('userOrder/<int:pk>', userOrderSubmitView, name='userOrder'),
     path('userOrderList/', UserOrderList.as_view(), name='userOrderList'),
     path('about/', About.as_view(), name='about'),
+    path('viewAllProducts/', ViewAllProducts.as_view(), name='viewAllProducts'),
+    path('adminHome/adminImageList/', AdminImageList.as_view(), name='adminImageList'),
+    path('adminHome/adminImageCreate/', AdminImageCreate.as_view(), name='adminImageCreate'),
+    path('adminHome/adminImageUpdate/<int:pk>', AdminImageUpdate.as_view(), name='adminImageUpdate'),
+    path('adminHome/adminImageDelete/<int:pk>', AdminImageDelete.as_view(), name='adminImageDelete'),
+    # path('adminHome/swiperList/', SwiperList.as_view(), name='swiperList'),
+    # path('adminHome/swiperCreate/', SwiperCreate.as_view(), name='swiperCreate'),
+    # path('adminHome/swiperUpdate/<int:pk>', SwiperUpdate.as_view(), name='swiperUpdate'),
+    # path('adminHome/swiperDelete/<int:pk>', SwiperDelete.as_view(), name='swiperDelete'),
 ]
