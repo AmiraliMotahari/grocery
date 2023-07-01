@@ -62,24 +62,24 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
                     <a class="nav-link text-capitalize" href="{% url 'home' %}"
-                      >home</a
+                      ><span class="fa-regular fa-home me-1"></span>home</a
                     >
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-capitalize {% if user.is_superuser %}disabled{% endif %}" href="{% url 'viewAllProducts'%}"
-                      >View all Products</a
+                      ><span class="fa-regular fa-cubes me-1"></span>View all Products</a
                     >
                   </li>
                   <li class="nav-item">
                     <a
                       class="nav-link text-capitalize {% if user.is_superuser %}disabled{% endif %}"
                       href="{% url 'userOrderList' %}"
-                      >orders</a
+                      ><span class="fa-regular fa-cart-shopping me-1"></span>orders</a
                     >
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-capitalize" href="{% url 'about' %}"
-                      >About Us</a
+                      ><span class="fa-regular fa-mug-hot me-1"></span>About Us</a
                     >
                   </li>
                 </ul>
