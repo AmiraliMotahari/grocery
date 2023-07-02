@@ -95,6 +95,13 @@ section.cityList > .wrapper > .container > .cityCard> .btns{
     -webkit-backdrop-filter: blur(2px);
     padding: 20px;
 }
+@media screen and (max-width: 576px) {
+  section.cityList > .wrapper > .container > .cityCard> .btns{
+    flex-flow: wrap !important;
+    padding: 5px 20px;
+    row-gap: 5px;
+}
+}
 section.cityList > .wrapper > .container > .cityCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
@@ -118,11 +125,33 @@ section.cityCreate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.cityCreate > .container > .card {
-  width: 300px;
+@media screen and (min-width: 992px) {
+  section.cityCreate > .container > .card {
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.cityCreate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.cityCreate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.cityCreate > .container > .card > form > input,
+section.cityCreate > .container > .card > form > a{
+  width: 100% !important;
+}
 }
 section.cityCreate > .container > .card > form {
   display: flex;
@@ -173,11 +202,33 @@ section.cityUpdate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.cityUpdate > .container > .card {
+@media screen and (min-width: 992px) {
+  section.cityUpdate > .container > .card {
   width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.cityUpdate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.cityUpdate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.cityUpdate > .container > .card > form > input,
+section.cityUpdate > .container > .card > form > a{
+  width: 100% !important;
+}
 }
 section.cityUpdate > .container > .card > form {
   display: flex;

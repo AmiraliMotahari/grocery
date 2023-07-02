@@ -117,6 +117,11 @@ section.adminImageList > .wrapper > .container > .adminImageCard> .btns{
     -webkit-backdrop-filter: blur(2px);
     padding: 20px;
 }
+@media screen and (max-width: 576px) {
+  section.adminImageList > .wrapper > .container > .adminImageCard> .btns{
+    flex-flow: wrap !important;
+}
+}
 section.adminImageList > .wrapper > .container > .adminImageCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
@@ -139,11 +144,33 @@ section.adminImageCreate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.adminImageCreate > .container > .card {
+@media screen and (min-width: 992px) {
+  section.adminImageCreate > .container > .card {
   width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.adminImageCreate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.adminImageCreate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminImageCreate > .container > .card > form > input,
+section.adminImageCreate > .container > .card > form > a{
+  width: 100% !important;
+}
 }
 section.adminImageCreate > .container > .card > form {
   display: flex;
@@ -196,11 +223,36 @@ section.adminImageUpdate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.adminImageUpdate > .container > .card {
+@media screen and (min-width: 992px) {
+  section.adminImageUpdate > .container > .card {
   width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.adminImageUpdate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.adminImageUpdate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminImageUpdate > .container > .card > form > input,
+section.adminImageUpdate > .container > .card > form > a{
+  width: 100% !important;
+}
+section.adminImageUpdate > .container > .card > form >.frame{
+  width: 100% !important;
+}
 }
 section.adminImageUpdate > .container > .card > form {
   display: flex;
@@ -293,6 +345,11 @@ section.adminImageDelete > .container > .card > form >.frame{
   border-radius: 15px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
   margin-bottom: 10px;
+}
+@media screen and (max-width: 576px) {
+section.adminImageDelete > .container > .card > form >.frame{
+  width: 100% !important;
+}
 }
 section.adminImageDelete > .container > .card > form >.frame>img{
   width: 100%;

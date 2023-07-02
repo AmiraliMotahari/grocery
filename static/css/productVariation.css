@@ -109,6 +109,11 @@ section.productVarList > .wrapper > .container > .productVarCard> .btns{
     -webkit-backdrop-filter: blur(2px);
     padding: 20px;
 }
+@media screen and (max-width: 576px) {
+  section.productVarList > .wrapper > .container > .productVarCard> .btns{
+    flex-flow: wrap !important;
+}
+}
 section.productVarList > .wrapper > .container > .productVarCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
@@ -131,11 +136,33 @@ section.productVarCreate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.productVarCreate > .container > .card {
+@media screen and (min-width: 992px) {
+  section.productVarCreate > .container > .card {
   width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.productVarCreate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.productVarCreate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.productVarCreate > .container > .card > form > input,
+section.productVarCreate > .container > .card > form > a{
+  width: 100% !important;
+}
 }
 section.productVarCreate > .container > .card > form {
   display: flex;
@@ -187,11 +214,33 @@ section.productVarUpdate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.productVarUpdate > .container > .card {
+@media screen and (min-width: 992px) {
+  section.productVarUpdate > .container > .card {
   width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.productVarUpdate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.productVarUpdate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.productVarUpdate > .container > .card > form > input,
+section.productVarUpdate > .container > .card > form > a{
+  width: 100% !important;
+}
 }
 section.productVarUpdate > .container > .card > form {
   display: flex;
@@ -242,11 +291,29 @@ section.productVarDelete > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.productVarDelete > .container > .card {
-  width: auto;
+@media screen and (min-width: 992px) {
+  section.productVarDelete > .container > .card {
+  width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.productVarDelete > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.productVarDelete > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
 }
 section.productVarDelete > .container > .card > form {
   display: flex;

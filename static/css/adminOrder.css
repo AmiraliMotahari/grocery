@@ -112,6 +112,11 @@ section.adminOrderList > .wrapper > .container > .adminOrderCard> .btns{
     -webkit-backdrop-filter: blur(2px);
     padding: 20px;
 }
+@media screen and (max-width: 576px) {
+  section.adminOrderList > .wrapper > .container > .adminOrderCard> .btns{
+    flex-flow: wrap !important;
+}
+}
 section.adminOrderList > .wrapper > .container > .adminOrderCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
@@ -180,11 +185,33 @@ section.adminOrderUpdate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.adminOrderUpdate > .container > .card {
+@media screen and (min-width: 992px) {
+  section.adminOrderUpdate > .container > .card {
   width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.adminOrderUpdate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.adminOrderUpdate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.adminOrderUpdate > .container > .card > form > input,
+section.adminOrderUpdate > .container > .card > form > a{
+  width: 100% !important;
+}
 }
 section.adminOrderUpdate > .container > .card > form {
   display: flex;

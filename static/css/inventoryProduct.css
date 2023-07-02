@@ -107,6 +107,11 @@ section.inventoryProductList > .wrapper > .container > .inventoryProductCard> .b
     -webkit-backdrop-filter: blur(2px);
     padding: 20px;
 }
+@media screen and (max-width: 576px) {
+  section.inventoryProductList > .wrapper > .container > .inventoryProductCard> .btns{
+    flex-flow: wrap !important;
+}
+}
 section.inventoryProductList > .wrapper > .container > .inventoryProductCard:hover > .btns{
     left: 50%;
     transform: translate(-50%, 0);
@@ -129,11 +134,33 @@ section.inventoryProductCreate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.inventoryProductCreate > .container > .card {
+@media screen and (min-width: 992px) {
+  section.inventoryProductCreate > .container > .card {
   width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.inventoryProductCreate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.inventoryProductCreate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.inventoryProductCreate > .container > .card > form > input,
+section.inventoryProductCreate > .container > .card > form > a{
+  width: 100% !important;
+}
 }
 section.inventoryProductCreate > .container > .card > form {
   display: flex;
@@ -185,11 +212,33 @@ section.inventoryProductUpdate > .container {
   align-items: center;
   margin-top: 50px;
 }
-section.inventoryProductUpdate > .container > .card {
+@media screen and (min-width: 992px) {
+  section.inventoryProductUpdate > .container > .card {
   width: 40%;
   padding: 15px;
   row-gap: 50px;
   box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  section.inventoryProductUpdate > .container > .card {
+  width: 80%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+}
+@media screen and (max-width: 576px) {
+  section.inventoryProductUpdate > .container > .card {
+  width: 100%;
+  padding: 15px;
+  row-gap: 50px;
+  box-shadow: 0px 0px 14px 0px rgba(36, 48, 110, 0.15);
+}
+section.inventoryProductUpdate > .container > .card > form > input,
+section.inventoryProductUpdate > .container > .card > form > a{
+  width: 100% !important;
+}
 }
 section.inventoryProductUpdate > .container > .card > form {
   display: flex;
